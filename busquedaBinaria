@@ -1,0 +1,17 @@
+lista [...] // tiene fechas
+
+fechaDeseada
+lista.tamaño
+
+limInferior = 0
+limSuperior = lista.tamaño - 1
+
+punto_prueba = redondea((limSup + limInf) / 2)
+
+si (lista[punto_prueba] = fechaDeseada) => acaba
+si (lista[punto_prueba] > fechaDeseada)
+  limSup = punto_prueba
+sino (else)
+  limInf = punto_prueba
+
+vuelve a buscar punto_preuba

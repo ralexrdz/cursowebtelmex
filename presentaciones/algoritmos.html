@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Conceptos</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h1>Algoritmos</h1></section>
+				<section>
+					<section>Un algoritmo es un  método  o  proceso  seguido  para  resolver  un  problema. El término viene desde antes de existir las computadoras, es un término matemático</section>
+					<section>¿Recuerdad el algoritmo para encontrar el Máximo Común Divisor? Euclides, Siglo IV A.C.</section>
+					<section>Si  el  problema  es  visto  como  una  función,  entonces  el  algoritmo  toma  una  entrada y la transforma en la salida.</section>
+					<section>Un problema es una función o asociación de  entradas  con  salidas.</section>
+					<section>Un problema puede tener muchos algoritmos</section>
+					<section>Por tanto, un algoritmo es  un  procedimiento  para  resolver  un  problema cuyos pasos son concretos y no ambiguos. El algoritmo debe ser correcto, de longitud  finita  y  debe  terminar  para  todas  las  entradas.</section>
+					<section>Un programa es una instanciación de un algoritmo en un lenguaje de programación.</section>
+				</section>
+				<section>
+					<section><h2>Características</h2></section>
+					<section><b>1. Entrada</b>: definir lo que necesita el algoritmo</section>
+					<section><b>2. Salida</b>: definir lo que produce.</section>
+					<section><b>3. No ambiguo</b>: explícito, siempre sabe qué comando ejecutar. </section>
+					<section><b>4. Finito</b>: El algoritmo termina en un número finito de pasos.</section>
+					<section><b>5. Correcto</b>: Hace lo que se supone que debe hacer. La solución es correcta</section>
+ 					<section><b>6. Efectividad</b>: Cada instrucción se completa en tiempo finito. Cada instrucción debe ser lo suficientemente básica como para que en principio pueda ser ejecutada por cualquier persona usando papel y lápiz.</section>
+				</section>
+				<section>
+					<section><h2>Formulación y Ejecución</h2></section>
+					<section>Hay que eleccionar la estrategia que parecezca más cercana a la requerida y hacer una hábil adaptación que se ajuste a la demanda.</section>
+					<section><h3>Formulación</h3>términos concisos y claros partiendo de las bases o supuestos que se dispone para especificar sus requerimientos.</section>
+					<section>Sólo a partir de una buena formulación será posible diseñar una estrategia de solución. Es necesario aprender a desligar estos dos procesos. </section>
+					<section>Es necesario darle consistencia e independencia para determinar con precisión a qué se quiere dar solución y luego canalizar una gama dealternativas posibles.</section>
+					<section>
+						<ul>
+							<li>Definición del problema</li>
+							<li>Supuestos: aserciones y limitaciones suministradas</li>
+							<li>Resultados esperados</li>
+						</ul>
+					</section>
+					<section><h3>Planteamiento del problema</h3></section>
+					<section>Lo que pretende un algoritmo es sintetizar de alguna forma una tarea, cálculo o mecanismo antes de ser transcrito al computador. </section>
+					<section>
+						<h4>Pasos</h4>
+						<ul>
+							<li>Análisis previo del problema.</li>
+							<li>Primera visión del método de resolución.</li>
+							<li>Descomposición en módulos.</li>
+							<li>Programación estructurada o Pseudocódigo</li>
+							<li>Búsqueda de soluciones parciales.</li>
+							<li>Ensamblaje de soluciones finales</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section><h3>Eficacia y Eficiencia</h3></section>
+					<section>Un algoritmo es <b>eficiente</b> cuando logra llegar a sus objetivos planteados utilizando la menor cantidad de recursos posibles, es decir, minimizando el uso memoria, de pasos y de esfuerzo humano.</section>
+					<section>Un algoritmo es <b>eficaz</b> cuando alcanza el objetivo primordial, el análisis de resolución del problema se lo realiza prioritariamente.</section>
+					<section></section>
+					<section></section>
+					<section>La eficiencia en <b>espacio</b> es una medida de la cantidad de memoria requerida por un programa.</section>
+					<section>La eficiencia en <b>tiempo</b> se mide en términos de la cantidad de tiempo de ejecución del programa.</section>
+				</section>
+				<section>
+					<section><h2>Algoritmos de Ordenamiento</h2></section>
+					<section>¿Cuántas comparaciones de elementos y cuántos movimientos de elementos de un lugar a otro son necesarios?</section>
+					<section><h3>Ordenamiento por Inserción</h3></section>
+					<section> Consta de tomar uno por uno los  elementos de un arreglo y recorrerlo hacia su posición con respecto a los  anteriormente ordenados. Así empieza c on el segundo elemento y lo ordena  con respecto al primero. Luego sigue con el tercero y lo coloca en su posición ordenada con respecto a los dos anteriores, así sucesivamente hasta recorrer todas las posiciones del arreglo. </section>
+					<section>
+						<img src="../insertion.gif" alt="">
+					</section>
+					<section><h3>Ordenamiento por Selección</h3></section>
+					<section>El método de ordenamiento por selección consiste en encontrar el menor de todos los elementos del arreglo e intercambiarlo con el que está en la primera posición. Luego el segundo más pequeño, y así sucesivamente hasta ordenar todo el arreglo.</section>
+					<section>
+						<img src="../selection.JPG" alt="">
+					</section>
+					<section><h3>Ordenamiento de la Burbuja (Bubblesort) </h3></section>
+					<section>Se recorre el arreglo intercambiando los elementos adyacentes que estén desordenados. Se recorre el arreglo tantas veces hasta que ya no haya cambios que realizar. Prácticamente lo que hace es tomar el elemento mayor y lo va recorriendo de posición en posición hasta  ponerlo en su lugar.</section>
+					<section>
+						<img src="../bubble.jpg" alt="">
+					</section>
+					<section><h3>  Ordenamiento Rápido (Quicksort) </h3></section>
+					<section>La idea básica del algoritmo es elegir un elemento llamado pivote, y ejecutar una secuencia de intercambios tal que todos los elementos menores que el pivote queden a la izquierda y todos los mayores a la derecha.</section>
+					<section>
+						<img src="../quick.png" alt="">
+					</section>
+					<section><h3>Ordenamiento por Mezclas Sucesivas (merge sort)</h3></section>
+					<section>Se aplica la técnica divide-y-vencerás, dividiendo la secuencia de datos en dos subsecuencias  hasta  que  las  subsecuencias  tengan  un  único  elemento,  luego  se   ordenan   mezclando   dos   subsecuencias   ordenadas   en   una   secuencia  ordenada,  en  forma  sucesiva  hasta obtener una secuencia única ya ordenada. Si n  =  1  solo  hay  un  elemento  por  ordenar,  sino  se  hace  una  ordenación  de  mezcla de la primera mitad del arreglo con la segunda mitad. Las dos mitades se ordenan de igual forma. </section>
+					<section>
+						<img src="../merge.png" alt="">
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

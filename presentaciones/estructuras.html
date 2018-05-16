@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Estructuras</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h1>Estructuras de datos</h1>
+				</section>
+        <section>
+          <section>
+            <h2>Listas Ligadas</h2>
+            <h4>(Linked Lists)</h4>
+          </section>
+          <section>
+            <p>es una de las estructuras de datos fundamentales, y puede ser usada para implementar otras estructuras de datos. Consiste en una secuencia de nodos, en los que se guardan campos de datos arbitrarios y una o dos referencias, enlaces o punteros al nodo anterior o posterior. </p>
+          </section>
+          <section>
+            <p>El principal beneficio de las listas enlazadas respecto a los vectores convencionales es que el orden de los elementos enlazados puede ser diferente al orden de almacenamiento en la memoria o el disco, permitiendo que el orden de recorrido de la lista sea diferente al de almacenamiento.</p>
+          </section>
+          <section>
+            <p>permiten inserciones y eliminación de nodos en cualquier punto de la lista en tiempo constante (suponiendo que dicho punto está previamente identificado o localizado), pero no permiten un acceso aleatorio</p>
+          </section>
+          <section>
+            <img src="../linkedList.jpeg" alt="">
+          </section>
+          <section>
+            <h2>Tipos</h2>
+            <ul>
+              <li>Simple</li>
+              <li>Doble</li>
+              <li>Circular simple</li>
+              <li>Circular doble</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section><h2>Pila</h2><h4>(Stack)</h4></section>
+          <section>
+            <p> estructura de datos que permite almacenar y recuperar datos, el modo de acceso a sus elementos es de tipo LIFO (del inglés Last In, First Out, «último en entrar, primero en salir»)</p>
+          </section>
+          <section>
+            <p>Para el manejo de los datos cuenta con dos operaciones básicas: apilar (push), que coloca un objeto en la pila, y su operación inversa, retirar (o desapilar, pop), que retira el último elemento apilado.</p>
+          </section>
+          <section><img src="../stack.png" alt=""></section>
+        </section>
+        <section>
+          <section><h2>Cola</h2><h4>(Queue)</h4></section>
+          <section>
+            <p>estructura de datos, caracterizada por ser una secuencia de elementos en la que la operación de inserción push se realiza por un extremo y la operación de extracción pop por el otro.</p>
+          </section>
+          <section>
+            <p>También se le llama estructura FIFO (del inglés First In First Out), debido a que el primer elemento en entrar será también el primero en salir.</p>
+          </section>
+          <section>
+            <img src="../queue.png" alt="">
+          </section>
+        </section>
+        <section>
+          <section><h2>Árbol Binario</h2><h4>(Binary Tree)</h4></section>
+          <section>
+            <p>es una estructura de datos en la cual cada nodo puede tener un hijo izquierdo y un hijo derecho. No pueden tener más de dos hijos (de ahí el nombre "binario").</p>
+          </section>
+          <section>
+            <p>Si algún hijo tiene como referencia a null, es decir que no almacena ningún dato, entonces este es llamado un nodo externo. En el caso contrario el hijo es llamado un nodo interno.</p>
+          </section>
+          <section><img src="../tree.png" alt=""></section>
+          <section><img src="../arraytree.png" alt=""></section>
+          <section><img src="../AVL_Tree_Example.gif" alt=""></section>
+        </section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

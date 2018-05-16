@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Conceptos</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h1>Conceptos</h1></section>
+				<section>
+					<section><h1>¿Computadora?</h1></section>
+					<section><h2>¿De qué está integrada una computadora?</h2></section>
+					<section><h2>¿Cómo interactuamos con una computadora?</h2></section>
+					<section>
+						<h2>¿Software?</h2>
+						<h2>¿Hardware?</h2>
+					</section>
+				</section>
+				<section>
+					<section><h1>¿Sistema Operativo?</h1></section>
+					<section><h2>¿Gestor de procesos?</h2></section>
+					<section>
+						<h2>¿Gestor de memoria?</h2>
+						<h3>¿principal y secundaria?</h3>
+					</section>
+					<section><h2>¿Sistema de entrada y salida?</h2></section>
+					<section><h2>¿Sistema de archivos?</h2></section>
+					<section><h2>¿Sistema de protección?</h2></section>
+					<section><h2>¿Sistema de comunicaciones?</h2></section>
+					<section><h2>¿Gestor de recursos?</h2></section>
+				</section>
+				<section>¿Programa o Aplicación?</section>
+				<section>¿Algoritmo?</section>
+				<section>¿Instrucción?</section>
+				<section>
+					<section>¿Programación?</section>
+					<section>¿Lenguajes de programación?</section>
+				</section>
+				<section>¿Por qué aprender a programar?</section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

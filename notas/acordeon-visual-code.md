@@ -1,5 +1,7 @@
 # Code
 
+pdf de cheatsheet https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf
+
 - `ctrl-p` abre selector de archivos
 - `ctrl-,` abre settings
 - `ctrl-b` toggle side bar

@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Estructuras</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h1>GIT</h1>
+					<h3>Manejador de Versiones</h3>
+				</section>
+        <section>
+          <section>
+            <h2>Historia</h2>
+          </section>
+          <section>
+            <h4>Por a'i de 2005</h4>
+						<p>Surge un problema. El Kernel de Linux se desarrolla y distribuye utilizando un software "privativo" llamado BitKeeper, cuyos creadores deciden quitarles el acceso gratuito que les había otorgado</p>
+          </section>
+					<section>
+						<img src="../linus.jpeg" alt="">
+					</section>
+          <section>
+            <p>El equipo de Linux, y en especial uno de sus creadores, Linus Torvalds, deciden crear su propio software de control de versiones distribuido (DVCS), juntando varias de las características que les habían gustado y renovando las que no</p>
+          </section>
+          <section>
+            <h2>Características</h2>
+            <ul>
+              <li>Velocidad</li>
+              <li>Simplicidad</li>
+              <li>Desarrollo no lineal</li>
+              <li>Free</li>
+							<li>Capacidad de manejar proyectos grandes</li>
+            </ul>
+          </section>
+					<section>
+						<h3>"Posiblemente el avance en desarrollo software más importante de los últimos 10 años"</h3>
+					</section>
+        </section>
+        <section>
+          <section><h2>¿Cómo funciona git?</h2></section>
+					<section>
+						<p>Para entender el funcionamiento de git hay que entender dos conceptos</p>
+						<ol>
+							<li><b>Commit:</b> Estado del proyecto en un punto en el tiempo</li>
+							<li><b>Branch:</b> Apuntador a un commit</li>
+						</ol>
+					</section>
+					<section>
+						<h3>Estado de los archivos</h3>
+						<ol>
+							<li><b>Commited</b>: El archivo ha sido agregado a la base local de git</li>
+							<li><b>Modified</b>: El archivo ha sido modificado en comparación a su verión "commiteada"</li>
+							<li><b>Staged</b>: El archivo ha sido "marcado" para ser agregado como parte del siguiente commit</li>
+						</ol>
+					</section>
+					<section>
+						<h3>Espacios de trabajo</h3>
+						<ol>
+							<li><b>Espacio de trabajo</b>: Archivos que vemos en este momento en el archivo</li>
+							<li><b>Stage (Index): </b></li>
+							<li><b>History:</b> Lista de commits pasados</li>
+						</ol>
+					</section>
+        </section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

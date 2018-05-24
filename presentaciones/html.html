@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Conceptos</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section><h1>HTML</h1></section>
+					<section>
+					  <h2>¿Qué significa?</h2>
+            <h4>Hyper Text Markup Language</h4>
+            <p>Un lenguaje de marcado o lenguaje de marcas es una forma de codificar un documento que, junto con el texto, incorpora etiquetas o marcas que contienen información adicional acerca de la estructura del texto o su presentación.</p>
+					</section>
+          <section>
+					  <h2>¿De qué está formado?</h2>
+            <h4>HTML Tags o etiquetas</h4>
+            <p>Comienzan con un caracter &lt;, y terminan con un caracter &gt;. Entre esos caracteres está el nombre de la etiqueta, y quizá algunos atributos dependiendo de la etiqueta. La mayoría de los atributos toman un valor también. Algunos atributos son requeridos, algunos son opcionales</p>
+            <p>La mayoría de las etiquetas contienen otras etiquetas y así definen la estructura de la página</p>
+					</section>
+          <section>
+            <h2>Tags esenciales</h2>
+            <ul>
+              <li><b>html</b>: Define el documento como html. Todas las otras etiquetas deben estar dentro de esta</li>
+              <li><b>head</b>: Contiene información de la página, pero no será mostrada. Los estilos se definen ahí</li>
+              <li><b>title</b>: Muestra el título en la pestaña del navegador</li>
+              <li><b>body</b>: La información visible del documento</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Atributos de las etiquetas</h2>
+            <p>Los atributos que se representan dentro de las eqtiquetas se definen principalmente con símbolos de igual y un valor, o en algunos casos, exclusivamente el nombre del atributo</p>
+          </section>
+          <section>
+            <h2>Estilo de las etiquetas</h2>
+            <p>Cada etiqueta tiene por defecto ciertos estilos y pueden ser sobreescritos usando el atributo style="" o una Hoja de estilos en cascada CSS</p>
+          </section>
+				</section>
+        <section>
+          <section><h1>Lista de HTML Tags</h1></section>
+          <section>
+            <h2>Tags para contenidos con texto</h2>
+            <ol>
+              <li>h1, h2, h3, h4, h5</li>
+              <li>div, span, p</li>
+              <li>ul, ol, li</li>
+              <li>hr, br</li>
+              <li><b>b</b>, <i>i</i>, <s>s</s>, <u>u</u>, <pre>pre</pre>, <code>isla</code></li>
+            </ol>
+          </section>
+          <section>
+            <h2>Tags para seccionar</h2>
+            <ul>
+              <li>div</li>
+              <li>section</li>
+              <li>footer</li>
+              <li>header</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Tags para multimedia</h2>
+            <ul>
+              <li>img</li>
+              <li>audio</li>
+              <li>video</li>
+              <li>canvas</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Tags para formulario</h2>
+            <ul>
+              <li>form</li>
+              <li>input</li>
+              <li>textarea</li>
+              <li>select</li>
+              <li>option</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section><h1>Propiedades de estilo importantes</h1></section>
+          <section>
+            <h2>Display</h2>
+            <ul>
+              <li><b>inline</b>: En línea, cupa sólo el espacio del contenido, no puede aplicarsele ancho o altura</li>
+              <li><b>block</b>: Empieza en una nueva línea y ocupa todo el ancho posibles</li>
+              <li><b>inline-block</b>: En línea, pero puede aplicarsele ancho y altura</li>
+              <li>flex</li>
+              <li>grid</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Margin, padding y border</h2>
+            <p>Son elementos que definen espacio entre un elemento y otro, o entre su contenido</p>
+            <img src="../margin-padding-border.png" alt="">
+          </section>
+          <section>
+            <h2>position</h2>
+            <p>define el metodo que utilizará el elemento para posicionar el elemento</p>
+            <ul>
+              <li><b>static</b>: posicionamiento normal. No es afectado por propiedades: top, bottom, left, rigth</li>
+              <li><b>relative</b>: Deja el espacio que normalmente ocuparía, pero se acomoda según: t,b,l,r</li>
+              <li><b>fixed</b>: Abandona el espacio que normalmente ocupa y se posiciona según el "viewport"</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li><b>absolute</b>: Abandona el espacio que normalmente ocupa y se posiciona según su padre con position distinta a <i>static</i></li>
+              <li><b>sticky</b>: Se posiciona según la posición del scroll del usuario. Cambia entre relative y fixed</li>
+            </ul>
+          </section>
+        </section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

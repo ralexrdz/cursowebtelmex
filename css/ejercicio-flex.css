@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    height: 95vh;
+}
+
+body div {
+    border: solid 1px;
+    margin: 5px;
+}
+
+body > div {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#panel-izq { flex: 1; }
+
+    #panel-izq div { width: calc(50% - 12px) }
+
+#panel-der { flex: 3; }
+
+    #panel-der .flex1 { width: calc(50% - 12px); }
+    
+    #panel-der .flex2 { width: calc(100% - 12px); }
+

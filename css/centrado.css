@@ -1,0 +1,41 @@
+#contenedor {
+    position: relative;
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: green;
+    color: white;
+}
+
+#contenedor div {
+    position: absolute; 
+    height: 50px; 
+    width: 100px;
+}
+
+#arriba-centrado {
+    top:-25px; left: calc( 50% - 50px);
+    color: black;
+}
+div.purple {
+    background-color: purple;
+}
+.orange {
+    background-color: orange;
+}
+.white {
+    background-color: white;
+    width: 10px !important;
+    height: 10px;
+}
+.blue {
+    background-color: blue;
+}
+
+#abajo-izquierda {
+    bottom: -25px; right: -25px; 
+}
+#abajo-derecha {
+    bottom: -25px; left: -25px; 
+}

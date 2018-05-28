@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Conceptos</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <section><h1>CSS</h1></section>
+                    <section>
+                        <h3>CSS significa</h3>
+                        <p>Cascade Style Sheet</p>
+                    </section>
+                    <section><p>es un lenguaje de diseño gráfico para definir y crear la presentación de un documento HTML</p></section>
+                    <section><p>CSS está diseñado principalmente para marcar la separación del contenido del documento y la forma de presentación de este, características tales como las capas o layouts, los colores y las fuentes</p></section>
+                    <section><p>También se puede mostrar una página web de manera diferente dependiendo del tamaño de la pantalla o tipo de dispositivo.</p></section>
+                </section>
+                <section>
+                    <section><h2>Selectores</h2></section>
+                    <section><img src="../css-selector.gif" alt=""></section>
+                    <section>
+                        <h4>Los selectores pueden aplicarse a:</h4>
+                        <ul>
+                            <li>Todos los elementos de un tipo, como los párrafos</li>
+                            <li>id: un identificador único para la etiqueta</li>
+                            <li>class: un identificador para anotar múltiples elementos</li>
+                        </ul>
+                        <p>o la combinación de estoss</p>
+                    </section>
+                </section>
+                <section>
+                    <section><h2>Declaraciones</h2></section>
+                    <section>
+                        <p>Cada declaración consiste en una propiedad, dos puntos (:), y un valor. Si hay muchas declaraciones en un bloque, un punto y coma (;) es insertado para separar cada declaración.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>Hojas de Estilo</section>
+                    <section data-markdown>
+                        <p>Para importar una hoja de estilos</p>
+                        <script type="text/template">
+                                ```html
+                                <link href="ruta/hojadeestilos.css" rel="stylesheet" />
+                                ```
+                        </script> 
+                    </section>
+                </section>
+                <section>
+                    <section><h2>Prioridades</h2></section>
+                    <section>
+                        <ol>
+                            <li><b>Importancia</b> 	La anotación ‘!important’ sobreescribe la prioridad anterior</li>
+                            <li><b>Inline</b>Un estilo aplicado a un elemento HTML por medio del atributo 'style'</li>
+                            <li><b>Media Type</b>Una propiedad aplica a todas las media types, a menos que un media type específico CSS esté definido</li>
+                            <li><b>Definido</b> por el usuario 	La mayoría de los navegadores tienen esta característica de accesibilidad: un estilo CSS definido por el usuario</li>
+                            <li><b>Especificidad del selector</b> Un selector contextual específico (#heading p) sobreescribe una definicón general (p)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ol start="5">
+                            <li><b>Orden de las reglas</b>	La última regla especificada tiene una mayor prioridad</li>
+                            <li><b>Herencia</b>	Si una propiedad no está especificada, es heredada del elemento padre</li>
+                            <li><b>Descriptor</b>	Una regla CSS común sobreescribe el valor del navegador</li>
+                            <li><b>Por defecto del navegador</b> La prioridad más baja: estos valores son determinados por las especificaciones iniciales de la W3C</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section><h2>Especificidad</h2></section>
+                    <section>
+                        <p>La especificidad se refiere a los pesos relativos de varias reglas. Determina que estilos se aplican a un elemento cuando más de una regla intentan aplicar estilos a ella. Basándose en la especificación, un simple selector (ej. h1) tiene una especificidad de 1, los selectores de clase tienen una especificidad de 1,0, y los selectores de id una especificidad de 1,0,0. </p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>H1 {color: white;} 	0, 0, 0, 1</li>
+                            <li>P EM {color: green;} 	0, 0, 0, 2</li>
+                            <li>.grape {color: red;} 	0, 0, 1, 0</li>
+                            <li>P.bright {color: blue;} 	0, 0, 1, 1</li>
+                            <li>P.bright EM.dark {color: yellow;} 	0, 0, 2, 2</li>
+                            <li>#id218 {color: brown;} 	0, 1, 0, 0</li>
+                            <li>style=" " 	1, 0, 0, 0</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2>Recursos</h2>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/Css/css_intro.asp">W3: tutorial Css </a></li>
+                        <li><a href="https://www.csstutorial.net/">csstutorial.net/</a></li>
+                        <li><a href="https://www.tutorialspoint.com/css/index.htm">Tutorials Point CSS/</a></li>
+                        <li><a href="https://www.codecademy.com/learn/learn-css">CodeAcademy: learn css</a></li>
+                        <li><a href="https://learnlayout.com/">Learn Layout</a></li>
+                    </ul>
+                </section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

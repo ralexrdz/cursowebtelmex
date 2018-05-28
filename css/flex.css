@@ -1,0 +1,25 @@
+#flex-con-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: purple;
+    height: 100px;
+}
+
+    #flex-con-wrap div {
+        flex: 1;
+        margin: 10px;
+        min-width: 100px;
+        background-color: orange;
+    }
+
+#flex-justified {
+    display: flex;
+    height: 100px;
+    background-color: purple;
+}
+
+    #flex-justified div {
+        width: 20px;
+        height: 20px;
+        background-color: orange;
+    }

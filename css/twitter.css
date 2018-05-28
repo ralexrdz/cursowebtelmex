@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+}
+.container {
+    display: flex;
+    height: 80vh;
+}
+
+footer {
+    height: 10vh;
+    background-color: gray;
+}
+
+.container > div {
+    flex: 1;
+    position: relative;
+}
+
+.container .center {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top:0; bottom: 0; left: 0; right: 0;
+    border: 1px;
+    margin: auto;
+}
+
+    .container .center img {
+        width: 30px;
+        height: 30px;
+    }
+
+.container #der {
+    display: flex;
+    flex-direction: column;
+}
+
+    .container #der #login-header {
+        flex: 1
+    }
+
+    .container #der #register-login {
+        flex: 4
+    }
+
+        .container #der #register-login img {
+            width: 20px;
+            height: 20px;
+        }

@@ -1,0 +1,15 @@
+.pos-rel { position: relative; }
+.pos-abs { 
+    position: absolute; 
+    top: 0;
+}
+
+.red-border { border: 1px solid red }
+
+.w-35  { width: 35%; }
+.w-25 { width: 25%; }
+
+.l-35 { left: 35%; }
+.r { right: 0; }
+
+.w-100p { width: 100px;}

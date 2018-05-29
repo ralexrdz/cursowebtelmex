@@ -1,0 +1,30 @@
+.grid {
+    height: 300px;
+    display: grid;
+    background-color: #eee;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* grid-gap: 10px; */
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+.grid div {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.flex {
+    display: flex;
+    grid-row: 2/6;
+}
+
+.flex div {
+    background-color: green;
+    border: 1px solid black;
+    flex: 1;
+}
+
+.grid #elem1 {
+    grid-column: 1/4;
+}

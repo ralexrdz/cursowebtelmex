@@ -1,0 +1,84 @@
+/* MOBILE  FIRST*/
+
+body {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    height: 95vh;
+    grid-gap: 10px;
+}
+
+body > * {
+    border: 1px solid lightgreen;
+}
+
+header { position: relative; }
+
+header img {
+    height: 80%;
+    margin: 5px;
+}
+
+header img#menu {
+    position: absolute;
+    right: 0;
+}
+
+#content { padding: 5px; }
+
+header #header-btns,
+#sidebar {
+    display: none;
+}
+
+/* PARA TABLET */
+
+@media (min-width: 360px) {
+    body {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    header {
+        grid-column: 1/3; 
+    }
+
+    header #header-btns {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 13px;
+    }
+    
+    header img#menu{
+        display: none;
+    }
+
+    #sidebar {
+        display: block;
+    }
+}
+
+/* PARA LAP O MONITOR */
+
+@media (min-width: 720px) {
+    body {
+        grid-template-columns:1fr 2fr 1fr;
+    }
+
+    header {
+        grid-column: 1/4; 
+    }
+
+    #content {
+        grid-column-start: 2;
+    }
+
+    header #header-btns {
+        display: block;
+        width: 200px;
+        position: absolute;
+        left: calc(50% - 100px);
+        text-align: center;
+        top: 13px;
+    }
+}
+

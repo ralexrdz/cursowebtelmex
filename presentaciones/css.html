@@ -111,6 +111,111 @@
                         <li><a href="https://learnlayout.com/">Learn Layout</a></li>
                     </ul>
                 </section>
+                <section>
+                    <section><h2>Fonts and Text</h2></section>
+                    <section>
+                        <h3>Font properties</h3>
+                        <ul>
+                            <li>font-style: normal, italic, oblique</li>
+                            <li>font-weight: normal, bold, ligther, bolder, 100-900</li>
+                            <li>font-size: #.#em, ##px, ##%, ##rem, smaller, x-small, medium, large</li>
+                            <li>line-height: normal, ##, ##em, ##%</li>
+                            <li>font-family: Comic Sans, Serif, Georgia</li>
+                        </ul>
+                    </section>
+                    <section data-markdown="">
+                        <h4>Custom fonts</h4>
+                        <style type="text/template">
+                            ``` css
+                            @font-face {
+                                font-family: "My Custom Font";
+                                src: url(http://www.example.org/mycustomfont.ttf) format("truetype");
+                            }
+                            ```
+                        </style>
+                    </section>
+                    <section>
+                        <h3>Text properties</h3>
+                        <ul>
+                            <li>color: nombre, #a7d, #634343, rgb(##,##,##), rgba(##,##,##, 0.#)</li>
+                            <li>text-align: left, right, center, justified </li>
+                            <li>text-decoration: overline, line-through, underline </li>
+                            <li>text-transform: uppercase, lowercase, capitalize</li>
+                            
+                        </ul>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>letter-spacing: -#px, #px</li>
+                            <li>word-spacing: -#px, #px</li>
+                            <li>text-shadow: v-position h-position color</li>
+                            <li>white-space: normal, nowrap, pre, pre-wrap, pre-line</li>
+                            <li>overflow-wrap / word-wrap: normal, break-word</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section><h2>Psudo clases y pseudo elementos</h2></section>
+                    <section>
+                        <h3>Pseudo-clases</h3>
+                        <p>Se ocupan para definir un estado especial de un elemento </p>
+                        <p>se definen con un ':' en el selector css</p>
+                    </section>
+                    <section>
+                        <h3>anchor (link)</h3>
+                        <ul>
+                            <li>:link</li>
+                            <li>:visited</li>
+                            <li>:hover</li>
+                            <li>:active</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>input (link)</h3>
+                        <ul>
+                            <li>:checked</li>
+                            <li>:disabled</li>
+                            <li>:focus</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>generales</h3>
+                        <li>:first-child</li>
+                        <li>:first-of-type</li>
+                        <li>:not(selector)</li>
+                        <li>:nth-child(#)</li>
+                        <li>:nth-last-child(#)</li>
+                        <li>:only-child</li>
+                    </section>
+                    <section>
+                        <h3>Psuedo Elementos</h3>
+                        <p>Se usan para poner estilo a la primera linea o letra de un elemento</p>
+                        <p>O para insertar contenido antes o después de un elemento</p>
+                        <p>Se escriben con '::' después del selector css</p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>::first-letter</li>
+                            <li>::first-line</li>
+                            <li>::selection</li>
+                            <li>::before</li>
+                            <li>::after</li>
+                        </ul>
+                        <p>'::before' y '::after' requeren la propiedad content</p>
+                    </section>
+                </section>
+                <section>
+                    <h3>Transparencia</h3>
+                    <p>opacity: 0.#</p>
+                </section>
+                <section>
+                    <h3>Overflow</h3>
+                    <p>Se usa para saber qué se hace cuando el contendido excede el tamaño del elemento</p>
+                    <ul>
+                        <li>overlfow: 'hidden'</li>
+                        <li>overlfow: 'scroll'</li>
+                    </ul>
+                </section>
 			</div>
 		</div>
 

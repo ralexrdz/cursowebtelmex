@@ -1,0 +1,11 @@
+input:disabled {
+    background-color: orange;
+}
+input:focus {
+    background-color: orange;
+}
+
+textarea {
+    width: 95%;
+    height: 50px;
+}

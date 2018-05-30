@@ -1,0 +1,39 @@
+.l1 { font-size: 30px; }
+.l2 { font-size: 150%; }
+.l3 {
+    font-size: 1em; 
+    font-family: 'Butterfly Kids';
+    color: rgba(0,100,150, 1);
+ }
+.l4 { font-size: 1.5rem; }
+
+.l3::first-line {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.l3::first-letter {
+    font-size: 3em;
+    float: left;
+}
+
+.l2 p::selection {
+    color: green;
+    background-color: red;
+}
+
+a:hover::before {
+    content: '-->'
+}
+a:hover::after {
+    background: url('../icono-menu.png');
+    background-size: 10px;  
+}
+
+.tachado {
+    text-decoration: line-through;
+}
+
+.rojo {
+    color: red;
+}

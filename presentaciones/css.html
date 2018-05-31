@@ -216,6 +216,107 @@
                         <li>overlfow: 'scroll'</li>
                     </ul>
                 </section>
+                <section>
+                    <section><h2>Transformaciones, Transiciones y Animaciones</h2></section>
+                    <section>
+                        <h3>Transform property</h3>
+                        <p>Aplica transformaciones 2D y 3D a un elemento</p>
+                        <p>Esta propiedad permite rotar, escalar, inclinar, trasladar, etc.</p>
+                    </section>
+                    <section data-markdown="">
+                        <script type="text/template">
+                            ```css
+                                transform: translate(x,y,z); /* Mueve elemento en cualquiera de las direcciones */
+                                transform: translateX(#); /* Mueve elemento en dirección x */
+                                transform: translateY(#); /* Mueve elemento en dirección y */
+                            ```
+                        </script>
+                    </section>
+                    <section data-markdown="">
+                        <script type="text/template">
+                            ```css
+                                transform: scaleX(#); /* Escala elemento horizontalmente */
+                                transform: scaleY(#); /* Escala elemento verticalmente */
+                            ```
+                        </script>
+                    </section>
+                    <section data-markdown="">
+                        <script type="text/template">
+                            ```css
+                                transform: skewX(##deg); /* Tuerce el elemento horizontalmente */
+                                transform: skewY(##deg); /* Tuerce elemento verticalmente */
+                            ```
+                        </script>
+                    </section>
+                    <section data-markdown="">
+                        <script type="text/template">
+                            ```css
+                                transform: rotateX(##deg); /* Rota el elemento horizontalmente */
+                                transform: rotateY(##deg); /* Rota elemento verticalmente */
+                                transform: rotateZ(##deg); /* Rota elemento verticalmente */
+                            ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Transiciones</h3>
+                        <p>Permite a los elementos hacer una transdormación paulatina, de un valor a otro, en un tiempo determinado </p>
+                        <p>Require definir dos valores</p>
+                        <ol>
+                            <li>La propiedad a transformar</li>
+                            <li>El tiempo que tardará</li>
+                        </ol>
+                    </section>
+                    <section data-markdown="">
+                        <script type="text/template">
+                            ```css
+                                div {
+                                    width: 100px;
+                                    height: 100px;
+                                    background: red;
+                                    -webkit-transition: width 2s; /* Safari */
+                                    transition: width 2s;
+                                }
+
+                                div:hover { width: 300px; }
+                            ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Animaciones</h3>
+                        <p>Permiten a los elementos gradualmente cambiar de un estilo a otro</p>
+                        <p>Lo primero que hay que definir son los cuadros por segundo</p>
+                    </section>
+                    <section data-markdown="">
+                        <script type="text/template">
+                            ```css
+                                @keyframes example {
+                                    from {background-color: red;}
+                                    to {background-color: yellow;}
+                                }
+
+                                div {
+                                    width: 100px;
+                                    height: 100px;
+                                    background-color: red;
+                                    animation-name: example;
+                                    animation-duration: 4s;
+                                }
+                            ```
+                        </script>
+                    </section>
+                    <section data-markdown="">
+                        <script type="text/template">
+                            ```css
+                                @keyframes example {
+                                    0%   {background-color: red;}
+                                    25%  {background-color: yellow;}
+                                    50%  {background-color: blue;}
+                                    100% {background-color: green;}
+                                }
+                            ```
+                        </script>
+                    </section>
+                </section>
 			</div>
 		</div>
 

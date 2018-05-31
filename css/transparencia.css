@@ -1,0 +1,134 @@
+#contenedor {
+    position: relative;
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    margin-top: 30px;
+    /* background-color: rgba(0,100,50,0.5); */
+    background-color: #006432;
+    opacity: 0.5;
+    color: white;
+}
+
+#contenedor div {
+    position: absolute; 
+    height: 50px; 
+    width: 100px;
+}
+
+#arriba-centrado {
+    top:-25px; left: calc( 50% - 50px);
+    color: black;
+}
+div.purple {
+    background-color: purple;
+}
+.orange {
+    background-color: orange;
+}
+.white {
+    background-color: white;
+    width: 10px !important;
+    height: 10px;
+}
+.blue {
+    background-color: blue;
+}
+
+#abajo-izquierda {
+    bottom: -25px; right: -25px; 
+}
+#abajo-derecha {
+    bottom: -25px; left: -25px; 
+}
+
+#arriba-centrado:hover,
+#abajo-izquierda:hover,
+#abajo-derecha:hover {
+    opacity: 0.5;
+}
+
+h3 {
+    opacity: 0.7;
+}
+
+.fecha {
+    opacity: 0.3;
+}
+
+.rot90z {
+    transform: rotateZ(90deg)
+}
+.rot45y {
+    transform: rotateY(45deg)
+}
+
+.crece {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 5s; /* Safari */
+    transition: width 5s;
+    transition-timing-function: linear;
+}
+
+.crece:hover { width: 500px; }
+.ease {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 5s; /* Safari */
+    transition: width 5s;
+    transition-timing-function: ease;
+}
+
+.ease:hover { width: 500px; }
+.ease-in {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 5s; /* Safari */
+    transition: width 5s;
+    transition-timing-function: ease-in;
+}
+
+.ease-in:hover { width: 500px; }
+.ease-out {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 5s; /* Safari */
+    transition: width 5s;
+    transition-timing-function: ease-out;
+}
+
+.ease-out:hover { width: 500px; }
+.ease-in-out {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 5s; /* Safari */
+    transition: width 5s;
+    transition-timing-function: ease-in-out;
+}
+
+.ease-in-out:hover { width: 500px; }
+.cubic {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 5s; /* Safari */
+    transition: height 5s;
+    transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    overflow: hidden;
+}
+
+.desc {
+    display: none;
+}
+
+.cubic:hover { height: 500px; }
+
+.cubic:hover .desc {
+    display: inline;
+}

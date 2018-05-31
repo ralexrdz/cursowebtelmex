@@ -26,9 +26,80 @@ header img#menu {
 #content { padding: 5px; }
 
 header #header-btns,
-#sidebar {
-    display: none;
+#sidebar,
+#header-btns button {
+    display: block;
 }
+
+@keyframes color {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+@keyframes tamano {
+    0%   {font-size: 1em}
+    25%  {font-size: 2em}
+    50%  {font-size: 3em}
+    100% {font-size: 4em}
+}
+
+@keyframes giraY {
+    from {transform: rotateY(0deg)}
+    to   {transform: rotateY(180deg)}
+}
+
+@keyframes giraYCamina {
+    from {
+        transform: rotateY(0deg);
+        margin-left: 0;
+    }
+    to   {
+        transform: rotateY(180deg);
+        margin-left: 100px;        
+    }
+}
+
+h1 {
+    background-color: red;
+    animation-name: tamano;
+    animation-duration: 10s;
+    animation-iteration-count: 3;
+    animation-direction: alternate-reverse;
+}
+
+p {
+    animation: color 20s;
+}
+
+#logo {
+    animation-name: giraYCamina;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Solo pantallas chiquitas */
+ @media (max-widht: 360px) {
+    #header-btns {
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        background-color: grey;
+        transition: height 1s, opacity 5s;
+        -webkit-transition: height 1s, opacity 5s;
+        overflow: hidden;
+    }
+    
+    #menu:hover + #header-btns,
+    #header-btns:hover {
+        height: 62px;
+        opacity: 1;
+    }
+ }
 
 /* PARA TABLET */
 
@@ -47,6 +118,16 @@ header #header-btns,
         right: 10px;
         top: 13px;
     }
+
+    header #header-btns button {
+        display: inline-block;
+        transition: transform 1s;
+    }
+
+    header #header-btns button:hover {
+        transform: scale(1.5, 1.5);
+    }
+        
     
     header img#menu{
         display: none;

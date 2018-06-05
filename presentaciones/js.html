@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Conceptos</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <section><h1>JAVASCRIPT</h1></section>
+                    <section data-markdown>
+						<h2>Cadenas de texto</h2>
+						<p>Se utilizan comillas simples o dobles para definir una cadena de texto</p>
+						<script type="text/template">
+							```
+							"cadena de texto"
+							'cadena de texto'
+						```
+					</script>
+					</section>
+                    <section>
+						<h3>length y substring</h3>
+						<p>Se usa el atributo length para medir el número de caracteres, contando los espacios</p>
+						<p>Se usa la funcion substring para recortar la cadena según posicion inicial y final</p>
+						<script type="text/template">
+							```
+							"cadena de texto".length // 15
+							'cadena de texto'.substring(<inicio>,<fin>) //
+							```
+						</script>
+					</section>
+					<section>
+						<h3>Comentarios</h3>
+						<p>// comentarios de línea</p>
+						<p>/* multili */</p> 
+					</section>
+                    <section>
+						<h3>Operaciones matemáticas básicas</h3>
+						<p>Resuelve primero (), luego * /, al final + -</p>
+					</section>
+                    <section>
+						<h3>Interaccion usario confirm, prompt, console.log</h3>
+						<script type="text/template">
+							```
+							confirm("cadena de texto") // Pregunta si acepta o cancela con botones
+							prompt('cadena de texto') // Prompt responde con una casilla de texto
+							console.log("mensaje en pantalla")
+							```
+						</script>
+					</section>
+                    <section>
+						<h3>Comparadores &gt; &lt; === </h3>
+						<p>La diferencia entre == y === es que uno compara por tipo de dato (Número/Booleano/Texto)</p>
+					</section>
+					<section>
+						<h3>Decisiones if else</h3>
+						<script type="text/template">
+							```
+							if (var=0) {
+								console.log("condicion verdadera");
+							} else {
+								console.log("condicion negativa")
+							}
+							```
+						</script>
+					</section>
+					<section>
+						<h3>Otras operaciones matemáticas</h3>
+						<ul>
+							<li>modulo: '%' => el residuo de la division entre el primer y el segundo  parametro</li>
+						</ul>
+					</section>
+					<section>condiciones con valores 0 null undefined y ""</section>
+				</section>
+				<section>
+					<section><h2>VARIABLES</h2></section>
+					<section>
+						<h3>Definicion</h3>
+						<p>se ocupa la palabra reservada 'var' para incializar</p>
+						<p>Para darle un valor se usa el signo '=' y el valor a la derecha del signo, se le asigna</p>
+						<script type="text/template">
+							```
+							var <nombreVariable> = <valorVariable>
+							```
+						</script>
+					</section>
+					<section>
+						<h3>Uso de methodos según tipo de dato</h3>
+						<p>string: substring, length</p>
+					</section>
+					<section>
+						<h3>modificación de variables</h3>
+						<p>SIN USAR 'var'</p>
+						<script type="text/template">
+							```
+							<nombreVariable> = <valorVariable>
+							<numero>++ //suma 1 al valor
+							<numero>-- //resta 1 al valor
+							```
+						</script>
+					</section>
+					<section>
+						<h5>Asignación del valor de la variable utilizando prompt</h5>
+						<script type="text/template">
+							```
+							<nombreVariable> = prompt('mensaje')
+							```
+						</script>
+					</section>
+				</section>
+				<section>
+					<section>FUNCIONES</section>
+					<section>Código reutilizable</section>
+					<section>
+						<h4>Sintaxis de definición: nombre, parametros, bloque de código</h4>
+						
+					</section>
+					<section>Llamado de función con parametros</section>
+					<section>comando return</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

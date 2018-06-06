@@ -36,7 +36,7 @@
 						```
 					</script>
 					</section>
-                    <section>
+                    <section data-markdown>
 						<h3>length y substring</h3>
 						<p>Se usa el atributo length para medir el número de caracteres, contando los espacios</p>
 						<p>Se usa la funcion substring para recortar la cadena según posicion inicial y final</p>
@@ -56,7 +56,7 @@
 						<h3>Operaciones matemáticas básicas</h3>
 						<p>Resuelve primero (), luego * /, al final + -</p>
 					</section>
-                    <section>
+                    <section data-markdown>
 						<h3>Interaccion usario confirm, prompt, console.log</h3>
 						<script type="text/template">
 							```
@@ -70,11 +70,11 @@
 						<h3>Comparadores &gt; &lt; === </h3>
 						<p>La diferencia entre == y === es que uno compara por tipo de dato (Número/Booleano/Texto)</p>
 					</section>
-					<section>
+					<section data-markdown>
 						<h3>Decisiones if else</h3>
 						<script type="text/template">
 							```
-							if (var=0) {
+							if (<condicion>) {
 								console.log("condicion verdadera");
 							} else {
 								console.log("condicion negativa")
@@ -86,13 +86,17 @@
 						<h3>Otras operaciones matemáticas</h3>
 						<ul>
 							<li>modulo: '%' => el residuo de la division entre el primer y el segundo  parametro</li>
+							<li>modulo: '++' => incrementa en 1 el valor</li>
+							<li>modulo: '--' => decrementa en 1 el valor</li>
+							<li>modulo: '+= num' => incrementa en num el valor</li>
+							<li>modulo: '-= num' => decrementa en num el valor</li>
 						</ul>
 					</section>
 					<section>condiciones con valores 0 null undefined y ""</section>
 				</section>
 				<section>
 					<section><h2>VARIABLES</h2></section>
-					<section>
+					<section data-markdown>
 						<h3>Definicion</h3>
 						<p>se ocupa la palabra reservada 'var' para incializar</p>
 						<p>Para darle un valor se usa el signo '=' y el valor a la derecha del signo, se le asigna</p>
@@ -106,7 +110,7 @@
 						<h3>Uso de methodos según tipo de dato</h3>
 						<p>string: substring, length</p>
 					</section>
-					<section>
+					<section data-markdown>
 						<h3>modificación de variables</h3>
 						<p>SIN USAR 'var'</p>
 						<script type="text/template">
@@ -117,7 +121,7 @@
 							```
 						</script>
 					</section>
-					<section>
+					<section data-markdown>
 						<h5>Asignación del valor de la variable utilizando prompt</h5>
 						<script type="text/template">
 							```
@@ -129,12 +133,65 @@
 				<section>
 					<section>FUNCIONES</section>
 					<section>Código reutilizable</section>
-					<section>
+					<section data-markdown>
 						<h4>Sintaxis de definición: nombre, parametros, bloque de código</h4>
-						
+						<script type="text/template">
+							```
+							var  nombreDeFunción = function (letras,parametros,numeros,etc) {
+								//CodigoReutilisable
+								return //lo que regresa la función 
+							} 
+							```
+						</script>
 					</section>
-					<section>Llamado de función con parametros</section>
-					<section>comando return</section>
+					<section data-markdown>
+						Llamado de función con parametros
+						<script type="text/template">
+							```
+							  nombreDeFunción("dfkjshdfh", 12345, false) 
+						
+							``` 
+						</script>
+					</section>
+				</section>
+				<section>
+					<section><h2>CICLOS</h2></section>
+					<section>
+						<h3>For</h3>
+						<div data-markdown>
+							<script type="text/template">
+								```
+								for (inicializacion-de-contador; condicion-de-salida; accion-final-ciclo) {
+									// Serie de instrucciones	  
+								}						
+								``` 
+							</script>
+						</div>
+					</section>
+					<section>
+						<h4>Repetir acción 'n' veces</h4>
+						<div data-markdown>
+							<script type="text/template">
+								```
+								for (var i=0; i&lt;n; i++) {
+									// Serie de instrucciones  
+								}				
+								``` 
+							</script>
+						</div>
+					</section>
+					<section>
+						<h3>While</h3>
+						<div data-markdown>
+							<script type="text/template">
+								```
+								while (condicion) {
+									// Serie de instrucciones	  
+								}						
+								``` 
+							</script>
+						</div>
+					</section>
 				</section>
 			</div>
 		</div>

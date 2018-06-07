@@ -1,0 +1,21 @@
+{
+  "name": "cursowebtelmex",
+  "homepage": "https://github.com/ralexrdz/cursowebtelmex",
+  "authors": [
+    "Raul Rodriguez <ralex.rdz@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "hakimel/reveal.js#^3.6.0"
+  }
+}

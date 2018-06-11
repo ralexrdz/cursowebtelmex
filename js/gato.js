@@ -1,5 +1,13 @@
+let turno = 'X'
+
 function clicked (element) {
-    console.log(element)
+    element.innerText = turno
+    if (turno === 'X') {
+        turno = 'O'
+    } else {
+        turno = 'X'
+    }
+    console.log("Es turno de:", turno)
 }
 
 

@@ -13,3 +13,6 @@ function cuentaPalabras (palabra, frase) {
     console.log(cont)
     return cont //cuantas palabras hay en la cadena
 }
+
+console.log('con palabra amigos',cuentaPalabras('amigos', cadena))
+console.log('con ,',cuentaPalabras(',', cadena))

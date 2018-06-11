@@ -1,0 +1,12 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 15px;
+    background-color: black;
+}
+
+.grid > div {
+    background-color: white;
+    height: 50px;
+}

@@ -302,6 +302,35 @@
 							</script>
 						</div>
 					</section>
+					<section>
+						<h3>Document Events</h3>
+					</section>
+					<section>
+						<h4>DOM Loaded</h4>
+						<div data-markdown="">
+							<script type="text/template">
+								```js
+								document.addEventListener("DOMContentLoaded", function () {
+									// El codigo aquí se ejecutará hasta 
+									// que todo el DOM esté cargado
+								})
+								```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h4>Tecla presionada</h4>
+						<div data-markdown="">
+							<script type="text/template">
+								```js
+								document.addEventListener("keyDown", function (event) {
+									let teclaPresionada = event.code //
+									// teclaPresionada = "KeyA", "KeyB" o "Digit9" o "ArrowDown"
+								})
+								```
+							</script>
+						</div>
+					</section>
 				</section>
 			</div>
 		</div>

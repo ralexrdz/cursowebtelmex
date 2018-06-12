@@ -1,5 +1,8 @@
 let turno = 'X'
 
+console.log("w", w)
+console.log("h", h)
+
 function clicked (element) {
     if (element.innerText !== '') return
     element.innerText = turno

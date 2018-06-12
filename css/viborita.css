@@ -4,3 +4,15 @@
     height: 20px;
     background-color: green;
 }
+
+.puntito {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: purple;
+}
+
+#marcador { 
+    font-size: 5em;
+}

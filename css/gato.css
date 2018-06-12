@@ -8,5 +8,7 @@
 
 .grid > div {
     background-color: white;
-    height: 50px;
+    height: 80px;
+    font-size: 4em;
+    text-align: center;
 }

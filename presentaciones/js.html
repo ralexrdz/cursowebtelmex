@@ -50,7 +50,7 @@
 					<section>
 						<h3>Comentarios</h3>
 						<p>// comentarios de línea</p>
-						<p>/* multili */</p> 
+						<p>/* multili */</p>
 					</section>
                     <section>
 						<h3>Operaciones matemáticas básicas</h3>
@@ -139,8 +139,8 @@
 							```
 							var  nombreDeFunción = function (letras,parametros,numeros,etc) {
 								//CodigoReutilisable
-								return //lo que regresa la función 
-							} 
+								return //lo que regresa la función
+							}
 							```
 						</script>
 					</section>
@@ -148,9 +148,9 @@
 						Llamado de función con parametros
 						<script type="text/template">
 							```
-							  nombreDeFunción("dfkjshdfh", 12345, false) 
-						
-							``` 
+							  nombreDeFunción("dfkjshdfh", 12345, false)
+
+							```
 						</script>
 					</section>
 				</section>
@@ -162,9 +162,9 @@
 							<script type="text/template">
 								```
 								for (inicializacion-de-contador; condicion-de-salida; accion-final-ciclo) {
-									// Serie de instrucciones	  
-								}						
-								``` 
+									// Serie de instrucciones
+								}
+								```
 							</script>
 						</div>
 					</section>
@@ -174,9 +174,9 @@
 							<script type="text/template">
 								```
 								for (var i=0; i&lt;n; i++) {
-									// Serie de instrucciones  
-								}				
-								``` 
+									// Serie de instrucciones
+								}
+								```
 							</script>
 						</div>
 					</section>
@@ -186,9 +186,119 @@
 							<script type="text/template">
 								```
 								while (condicion) {
-									// Serie de instrucciones	  
-								}						
-								``` 
+									// Serie de instrucciones
+								}
+								```
+							</script>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section><h2>JSON</h2></section>
+					<seciton><h4>Significa JavaScipt Object Notation</h4></seciton>
+					<section>
+						<h4>Sintaxis</h4>
+						<div data-markdown>
+							<script type="text/template">
+								```js
+								let objetoVacio = {}
+								// se utilizan ','s para dividir entre campo-valor y otro campo-valor
+								let objeto = {
+									"nombreDeCampo": "valorDeCampo", // en inglés field y value
+									campoNumérico: 420, // las comillas en el nombre son opcionales salvo que tengan guiones o espacios
+									campoConArreglo: ["a", "b", "c"] //
+								}
+								//
+								```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h4>Sintaxis</h4>
+						<div data-markdown>
+							<script type="text/template">
+								```js
+								// para accesar y modificar los campos se utiliza
+								// el nombre de la variable con un '.' y el nombre del campo a accesar
+								console.log(objeto.nombreDeCampo) // "valorDeCampo"
+								// también se puede utilizar, similar a los arreglos, '["nombreDeCampo"]'
+								console.log(objeto["campoNumerico"]) // 420
+								// y para modificarlo
+								objecto.campoNumerico = 666
+								console.log(objeto["campoNumerico"]) // 420
+								```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h4>Sintaxis</h4>
+						<div data-markdown>
+							<script type="text/template">
+								```js
+								// para accesar y modificar los campos se utiliza
+								// el nombre de la variable con un '.' y el nombre del campo a accesar
+								let objeto = {
+									prop1: 1, prop2: "a",
+									subobjeto: {
+										subprop1: 2, subprop2: "b"
+										subsubobjeto: {
+											subsubprop1: 3,
+											subsubprop2: "c"
+										}
+									}
+								}
+								//
+								```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h5>Recursos</h5>
+						<a href="https://www.w3schools.com/js/js_json_syntax.asp">W3: JSON Syntax</a>
+						<a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON">Mozilla: JSON</a>
+					</section>
+				</section>
+				<section>
+					<section><h2>Events</h2></section>
+					<section>
+						<p>JavaScipt es un lenguage conducido por eventos (Event driven)</p>
+						<p>Podemos escuchar o subscribirnos a algunos para realizar ciertas operaciones</p>
+						<table style="font-size: 0.5em;">
+							<th>
+								<td>Events</td>
+								<td>Descipción</td>
+							</th>
+							<tr><td>onchange</td><td> 	Un elemento HTML ha cambiado</td></tr>
+							<tr><td>onclick</td><td> 	El usuario hace click en un elemento HTML</td></tr>
+							<tr><td>onmouseover</td><td> 	El usuario pasa el puntero encima en un elemento HTML</td></tr>
+							<tr><td>onmouseout</td><td> 	El usuario deja de pasar por encima de un elemento HTML</td></tr>
+							<tr><td>onkeydown</td><td> El usuario presiona una tecla</td></tr>
+							<tr><td>onload</td><td> El navegador ha terminado de cargar la página</td></tr>
+						</table>
+					</section>
+					<section>
+						<p>Hay varias maneras de subcribirse a estos eventos</p>
+						<div data-markdown>
+							<script type="text/template">
+								```html
+								<div onclick="heSidoClickeado()">...</div>
+								```
+							</script>
+						</div>
+						<div data-markdown>
+							<script type="text/template">
+								```js
+								let element = document.getElementById("myElemento")
+								element.onclick = function() { ... }
+								```
+							</script>
+						</div>
+						<div data-markdown>
+							<script type="text/template">
+								```js
+								let element = document.getElementById("myElemento")
+								element.addEventListener('click', function() { ... })
+								```
 							</script>
 						</div>
 					</section>

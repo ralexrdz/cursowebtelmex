@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/directorio.css">
+</head>
+<body>
+    <div id="contenedor">
+        <div id="formulario">
+            <div id="datos-generales">
+                <div><label for="nombre">Nombre:</label><input type="text" id="nombre"></div>
+                <div><label for="apellido">Apellido:</label><input type="text" id="apellido"></div>
+                <div><label for="fecha-nacimiento">Fecha nacimiento:</label><input type="date" id="fecha-nacimiento"></div>
+            </div>
+            <div id="direccion">
+                <div><label for="calle">Calle:</label><input type="text" id="calle"></div>
+                <div><label for="numero">Número:</label><input type="text" id="numero"></div>
+            </div>
+            <div id="telefonos">
+                
+
+                <!-- Aqui es donde telefonos.appendChild() pone el elemento  -->
+            </div>
+            <button onclick="capturaDatos()">Agergar contacto</button>
+        </div>
+        <div id="tarjetitas"></div>
+    </div>
+    <script src="../js/directorio.js"></script>
+</body>
+</html>

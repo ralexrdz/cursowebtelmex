@@ -1,0 +1,19 @@
+#contenedor {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border: 1px solid lightgray;
+}
+
+#contenedor > div {
+    border: 1px solid lightgray;
+    height: 90vh; 
+    margin: 10px;    
+}
+
+#contenedor #formulario > div {
+    border: 1px solid lightgray;
+    margin: 10px;
+    padding: 10px;
+}
+
+

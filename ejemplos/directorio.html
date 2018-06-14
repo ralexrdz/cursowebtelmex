@@ -19,12 +19,16 @@
                 <div><label for="calle">Calle:</label><input type="text" id="calle"></div>
                 <div><label for="numero">Número:</label><input type="text" id="numero"></div>
             </div>
-            <div id="telefonos">
-                
-
-                <!-- Aqui es donde telefonos.appendChild() pone el elemento  -->
+            <div>
+                <div id="telefonos">
+                    
+                    <div><label for="tel1">Telefono 1</label><input type="text" id="tel1"></div>
+                    
+                    <!-- Aqui es donde telefonos.appendChild() pone el elemento  -->
+                </div>
+                <button onclick="nuevoCampoTel()">Agrega Telefono</button>
             </div>
-            <button onclick="capturaDatos()">Agergar contacto</button>
+            <button onclick="agregarADirectorio()">Agergar contacto</button>
         </div>
         <div id="tarjetitas"></div>
     </div>

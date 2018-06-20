@@ -1,9 +1,7 @@
 let turno = 'X'
 
-console.log("w", w)
-console.log("h", h)
-
 function clicked (element) {
+    console.log(element)
     if (element.innerText !== '') return
     element.innerText = turno
     if (turno === 'X') {
@@ -12,7 +10,10 @@ function clicked (element) {
         turno = 'X'
     }
     let casillas = document.getElementsByClassName("casilla") // HTMLCollection
-    let tiros = []
+    console.log('casillas', casillas)
+    console.log('casillas', casillas.length)
+    console.log('casillas[0]', casillas[0])
+    let tiros = []   
     for (let i = 0; i < casillas.length; i++) {
         tiros.push(casillas[i].innerText)
     }
@@ -29,6 +30,7 @@ function alguienGanoOEmpate(tiros) {
     let hayGanador = false
     
     // renglones iguales
+    // "!" significa negación 
     if (!hayGanador) hayGanador = compara3Casillas(0, 1, 2, tiros)
     if (!hayGanador) hayGanador = compara3Casillas(3, 4, 5, tiros)
     if (!hayGanador) hayGanador = compara3Casillas(6, 7, 8,  tiros)
@@ -42,7 +44,7 @@ function alguienGanoOEmpate(tiros) {
     if (!hayGanador) hayGanador = compara3Casillas(0, 4, 8, tiros)
     if (!hayGanador) hayGanador = compara3Casillas(2, 4, 6, tiros)
    
-    
+    // !tiros.includes('') => significa que tiros no tiene un valor ''
     if (!tiros.includes('') && !hayGanador ) {
         alert("empate")
         hayGanador = true

@@ -8,28 +8,33 @@
     <link rel="stylesheet" href="../css/directorio.css">
 </head>
 <body>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <div id="contenedor">
-        <div id="formulario">
+        <form id="formulario" action="#">
+            <!-- El form en su accion submit buscará únicamente 
+                los elementos con attr name -->
             <div id="datos-generales">
-                <div><label for="nombre">Nombre:</label><input type="text" id="nombre"></div>
-                <div><label for="apellido">Apellido:</label><input type="text" id="apellido"></div>
-                <div><label for="fecha-nacimiento">Fecha nacimiento:</label><input type="date" id="fecha-nacimiento"></div>
+                <!-- los elementos label según su atributo "for"
+                buscarán por #id el elemento de formulario a enfocar (focus) -->
+                <div><label for="nombre">Nombre:</label><input type="text" id="nombre" name="nombre"></div>
+                <div><label for="apellido">Apellido:</label><input type="text" id="apellido" name="apellido"></div>
+                <div><label for="fecha-nacimiento">Fecha nacimiento:</label><input type="date" id="fecha-nacimiento" name="fecha-nacimiento"></div>
             </div>
             <div id="direccion">
-                <div><label for="calle">Calle:</label><input type="text" id="calle"></div>
-                <div><label for="numero">Número:</label><input type="text" id="numero"></div>
+                <div><label for="calle">Calle:</label><input type="text" id="calle" name="calle"></div>
+                <div><label for="numero">Número:</label><input type="text" id="numero" name="numero"></div>
             </div>
             <div>
                 <div id="telefonos">
                     
-                    <div><label for="tel1">Telefono 1</label><input type="text" id="tel1"></div>
+                    <div><label for="tel1">Telefono 1</label><input type="text" id="tel1" name="tel"></div>
                     
                     <!-- Aqui es donde telefonos.appendChild() pone el elemento  -->
                 </div>
-                <button onclick="nuevoCampoTel()">Agrega Telefono</button>
+                <a onclick="nuevoCampoTel(); return false;">Agrega Telefono</a>
             </div>
-            <button onclick="agregarADirectorio()">Agergar contacto</button>
-        </div>
+            <a onclick="agregarADirectorio(); return false;">Agergar contacto</a>
+        </form>
         <div id="tarjetitas"></div>
     </div>
     <script src="../js/directorio.js"></script>

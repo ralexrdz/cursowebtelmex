@@ -80,8 +80,15 @@ p {
     animation-direction: alternate;
 }
 
+/* 
+PIENSEN LOS MEDIA QUERIES COMO SI FUERA UN IF ()
+
+SI LA CONDICION SE CUMPLE SE APLICAN LOS ESTILOS DENTRO DE LAS {}
+
+*/
+
 /* Solo pantallas chiquitas */
- @media (max-widht: 360px) {
+ @media (min-widht: 360px) {
     #header-btns {
         height: 0;
         opacity: 0;

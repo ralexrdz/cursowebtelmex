@@ -15,6 +15,7 @@
 #sec4 { display: none }
 #sec5 { display: none }
 
+/* Solo aplica estos estilos para pantallas mayores a 300px  */
 @media screen and (min-width: 300px){
     .container {
         font-size: 1em;

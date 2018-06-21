@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Conceptos</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <section><h1>Jquery</h1></section>
+                    
+					<section>
+                        <h4>$ o jQuery function</h4>
+                        <p>Permite seleccionar elementos HTML con selectores CSS</p>
+                        <p>Aquello que regresa la función $() es un <b>objeto Jquery</b></p>
+                        <p>podemos pasar un ElementoHTML como parametro y regresará un objeto JQuery</p>
+                        <p>Las funciones también son objetos, por lo que $ tiene también propiedades y métodos</p>
+                        <p>Ej. $.ajax</p>
+                    </section>
+					<section>
+                        <h4>$(document).ready()</h4>
+                        <p>El equivalente a </p>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                document.addEventListener('DOMContentLoaded'function() {
+                                    console.log( 'ready!' );
+                                    });
+                                ```
+                            </script>
+                        </div>
+						<div data-markdown="">
+							<script type="text/template">
+								```js
+								$( document ).ready(function() {
+                                    console.log( 'ready!' );
+                                  });
+								```
+							</script>
+						</div>
+                    </section>
+					<section>
+                        <h4>getElementsBy... con Jquery</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                $( '#header' ); // select the element with an ID of 'header'
+                                $( 'li' );      // select all list items on the page
+                                $( 'ul li' );   // select list items that are in unordered lists
+                                $( '.person' ); // select all elements with a class of 'person'
+                                ```
+                            </script>
+                        </div>
+                    </section>
+					<section>
+                        <h4>Obtener los Elementos HTML o como elemento Jquery (raw)</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                let lis = $( 'li' );      // jQueryObject
+                                let rawElement = lis[0] // HTML Element
+                                rawElement.innerHTML
+                                ```
+                            </script>
+                        </div>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                let lis = $( 'li' );      // jQueryObject
+                                let liJQueryObject = lis.eq(0) // HTML Element
+                                liJQueryObject.html()
+                                ```
+                            </script>
+                        </div>
+                    </section>
+					<section>
+                        <h4>Crear nuevos elementos HTML</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                $( '<p>' ); // creates a new <p> element with no content
+                                $( '<p>Hello!</p>' ); // creates a new <p> element with content
+                                $( '<p class="greet">Hello!</p>' ); // creates a new <p> with content and class
+                                ```
+                            </script>
+                        </div>
+                    </section>
+					<section>
+                        <h4>Metodo is()</h4>
+                        <p>Es para probar si nuestro elemento cumple ciertos criterios</p>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                $( 'li' ).eq( 0 ).is( '.special' ); // test if first element of li's has special class
+                                ```
+                            </script>
+                        </div>
+                    </section>
+					<section>
+                        <h4>Metodos "getter" y "setter"</h4>
+                        <p>Son metodos de los objetos JQuery con los cuales de no recibir parametros, obtiene; y de recibirlos, los asigno</p>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                let obtengoHTML = $( 'li' ).eq(0).html() 
+                                ```
+                            </script>
+                        </div>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                $( 'li' ).eq(0).text("Hoola") // asigno texto
+                                ```
+                            </script>
+                        </div>
+                    </section>
+					<section>
+                        <h4>Búsqueda dentro de un objeto JQuery $.find()</h4>
+                        <p>Podemos seleccionar los elementos hijos de un objeto JQuery via el metodo find()</p>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                var listItems = $( 'li' );
+                                var spans = listItems.find( 'span' );
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <h4>Filtrado de elementos</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                var listItems = $( 'li' );
+                                // filter the selection to only items with a class of 'special'
+                                var special = listItems.filter( '.special' );
+                                // filter the selection to only items without a class of 'special'
+                                var notSpecial = listItems.not( '.special' );
+                                // filter the selection to only items that contain a span
+                                var hasSpans = listItems.has( 'span' );
+                                ```
+                            </script>
+                        </div>                        
+                    </section>
+                    <section>
+                        <h4>Elementos relativos a una selección</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                // get the first list item on the page
+                                var listItem = $( 'li' ).first(); // also: .last()
+                                // get the siblings of the list item
+                                var siblings = listItem.siblings();
+                                // get the next sibling of the list item
+                                var nextSibling = listItem.next(); // also: .prev()
+                                // get the list item's parent
+                                var list = listItem.parent();
+                                // get the list items that are immediate children of the list
+                                var listItems = list.children();
+                                ```
+                            </script>
+                        </div>                        
+                    </section>
+                    <section>
+                        <h4>Manipulación de elementos</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                $( 'li' ).addClass( 'hidden' );
+                                $( 'li' ).eq( 1 ).removeClass( 'hidden' );
+                                $( 'li' ).eq( 1 ).toggleClass( 'hidden' );
+
+                                $( elem ).css( 'padding-left', padding + 'px' );
+                                $( elem ).val( 'new value');
+                                $( 'input[type="checkbox"]' ).prop( 'checked', 'checked' );
+                                $( 'a' ).attr( 'title', 'Click me!' );
+                                ```
+                            </script>
+                        </div>
+                        <p>.css(), .val(), .prop() y .attr() Pueden ser usardos como getters o como setters</p>
+                    </section>
+                    <section>
+                        <h4>Colocación de elementos en el HTML</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                listItem.appendTo( '#idElemento' ); // coloca listItem como último hijo de idElemento
+                                $( '#idElemento').append( listItem ); // mismo
+                                // otros métodos insertAfter, after, around, inside, outside
+                                ```
+                            </script>
+                        </div>
+                        <p>.css(), .val(), .prop() y .attr() Pueden ser usardos como getters o como setters</p>
+                    </section>
+                    <section>
+                        <h4>Subscripción a eventos</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                $( 'li' ).click(function( event ) {
+                                    console.log( 'clicked', $( this ).text() );
+                                  });
+                                // otros métodos para escuchar eventos
+                                // .keydown(), .keypress(), .keyup(), .mouseover(), .mouseout(), .mouseenter(), .mouseleave(), .scroll(), .focus(), .blur(), .resize()
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <h4>¡Efectos!</h4>
+                        <ul>
+                            <li>.show() Show the selected elements</li>
+                            <li>.hide() Hide the selected elements</li>
+                            <li>.fadeIn() Animate the opacity of the selected elements to 100%</li>
+                            <li>.fadeOut() Animate the opacity of the selected elements to 0%</li>
+                        </ul>
+                        <p>+3</p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>.slideDown() Display the selected elements with a vertical sliding motion</li>
+                            <li>.slideUp() Hide the selected elements with a vertical sliding motion</li>
+                            <li>.slideToggle() Show or hide the selected elements with a vertical sliding motion, depending on whether the elements are currently visible.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Puedes aplicar instrucciones para cuanto termine la animación</p>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                $( 'p.old' ).fadeOut( 300, function() {
+                                    $( this ).remove();
+                                });
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <h4>Animaciones customizadas .animate()</h4>
+                        <div data-markdown="">
+                            <script type="text/template">
+                                ```js
+                                $( '.funtimes' ).animate({
+                                    left: '+=50', // increase by 50
+                                    opacity: 0.25,
+                                    fontSize: '12px'
+                                  },
+                                  300,
+                                  function() {
+                                    // executes when the animation is done
+                                  }
+                                );
+                                ```
+                            </script>
+                        </div>
+                        
+                    </section>
+
+				</section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

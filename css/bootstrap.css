@@ -11,3 +11,9 @@
 .green {
     background-color: green;
 }
+
+#box, #not-box {
+    width: 50px;
+    border: 5px solid black;
+}
+

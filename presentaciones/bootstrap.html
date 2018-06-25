@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Conceptos</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section>
+          <section><h1>Bootstrap</h1></section>
+          <section>
+            <p>Es una librería WEB (HTML, CSS, JS) que sirve para diseñar y prototipar aplicaciones responsivas</p>
+            <p>Utiliza componentes precontruidos y pluggins basados en JQuery</p>
+            <p>Puede instalarse via <b>npm</b> o accesando al cdn</p>
+          </section>
+          <section>
+						<h2>CSS</h2>
+            <div data-markdown>
+  						<script type="text/template">
+  							```html
+  							<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    						```
+    					</script>
+            </div>
+            <h2>Jquery, Popper y BoostrapJS</h2>
+            <div data-markdown>
+              <script type="text/template">
+                ```html
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+                ```
+              </script>
+            </div>
+          </section>
+				</section>
+        <section>
+          <section>
+            <h3>Containers</h3>
+            <p>Es el componente básico y es requerido para utilizar el responsive grid system</p>
+            <div data-markdown>
+              <script type="text/template">
+                ```html
+                <div class="container">
+                  <!-- Content here -->
+                </div>
+                ```
+              </script>
+            </div>
+            <p>Dentro de los containers deben ir <b>.row</b> filas</p>
+          </section>
+          <section>
+            <h3>Gris system</h3>
+            <p>Bootstrap ocupa un sistema de layout para distintos tipos de dispositivos: celulares, tablets, laptops, pantallas</p>
+            <p>Utiliza un sistema de 12 columnas para definir cuánto ocupa cada elemento</p>
+          </section>
+          <section>
+            <img src="../bootstrap-grid.png" alt="" />
+          </section>
+          <section>
+            <p>Se utilizan prefijos para determinar para cada tamaño cuántas columnas ocupa: <b>.col-xs-*</b> <b>.col-sm-*</b> <b>-.col-md-*</b> <b>.col-lg-*</b> </p>
+            <div data-markdown>
+            <script type="text/template">
+            | Tamaño | Breakpoint |
+            |-----|-----|
+            | Extra small devices | Phones (<768px) |
+            | Small devices  | Tablets (≥768px) |
+            |	Medium devices | Desktops (≥992px) |
+            | Large devices | Desktops (≥1200px) |
+            </script>
+            </div>
+          </section>
+          <section>
+            <p>Ejemplo</p>
+            <div data-markdown>
+            <script type="text/template">
+            ```html
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-md-2"><!--Column one--></div>
+                    <div class="col-sm-9 col-md-8"><!--Column two--></div>
+                    <div class="col-sm-12 col-md-2"><!--Column three--></div>
+                </div>
+            </div>
+            ```
+            </script>
+            </div>
+
+          </section>
+          <section>
+            <p>Ejemplo con rows anidadas</p>
+            <div data-markdown>
+            <script type="text/template">
+            ```html
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xs-8"><!--Column left--></div>
+                      <div class="col-xs-4">
+                          <!--Column right with nested rows and columns-->
+                          <div class="row">
+                              <div class="col-xs-12"></div>
+                          </div>
+                          <div class="row">
+                              <div class="col-xs-12"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            ```
+            </script>
+            </div>
+          </section>
+          <section>
+            <p>Para dejar casillas vacias se utiliza la propiedad offset</p>
+            <div data-markdown>
+            <script type="text/template">
+            `.col-md-offset-*`, `.col-sm-offset-*`
+            ```html
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-4"><!--Column with 4 columns offset--></div>
+                </div>
+            </div>
+            ```
+            </script>
+            </div>
+          </section>
+          <section>
+            <p>Para hacer visible sólo para un cierto tamaño o para esconder elementos en cierto otro tamaño se ocupan las clases <b>.visible</b> y <b>.hidden</b></p>
+            <div data-markdown>
+            <script type="text/template">
+            `.col-md-offset-*`, `.col-sm-offset-*`
+            ```html
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-4"><!--Column with 4 columns offset--></div>
+                </div>
+            </div>
+            ```
+            </script>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Componentes</h2>
+          </section>
+          <section>
+            <h4>Alerts</h4>
+          </section>
+          <section>
+            <h4>Badge</h4>
+          </section>
+          <section>
+            <h4>Alerts</h4>
+          </section>
+          <section>
+            <h4>Alerts</h4>
+          </section>
+          <section>
+            <h4>Alerts</h4>
+          </section>
+          <section>
+            <h4>Alerts</h4>
+          </section>
+        </section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

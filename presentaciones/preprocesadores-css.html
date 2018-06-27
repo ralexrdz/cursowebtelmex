@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Preprocesadores CSS</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+                        <h1>Preprocesadores CSS</h1>
+                    </section>
+                    <section>
+                        <h3>¿Por qué usar preprocesadores?</h3>
+                        <ul>
+                            <li>Css tiende a volverse complejo y difícil de mantener</li>
+                            <li>No tiene capacidad de usar variables, anidado, mixins, herencia</li>
+                            <li>Modularización del código</li>
+                        </ul>
+                    </section>
+				</section>
+				<section>
+                    <section>
+                        <h1>SASS</h1>
+                        <a target="_blank" href="https://sass-lang.com/">https://sass-lang.com/</a>
+                    </section>
+                    <section>
+                        <h3>Instalación</h3>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```bash
+                                $ npm install -g sass 
+                                ```
+                            </script>
+                        </div>
+                        <a target="_blank" href="https://sass-lang.com/install">https://sass-lang.com/install</a>
+                    </section>
+                    <section>
+                        <h3>Uso</h3>
+                        <p>Se usa Sass para procesar los archivos de tipo '.sass' y '.scss'</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```bash
+                                > sass src/css/index.scss build/css/index.css
+                                ```
+                            </script>
+                        </div>
+                        <a target="_blank" href="https://sass-lang.com/guide">https://sass-lang.com/guide</a>
+                    </section>
+                    <section>
+                        <h4>Diferencia entre SCSS y SASS</h4>
+                        <p>La diferencia está en la sintaxis, con SCSS es necesario poner ';' y '{...}'</p>
+                    </section>
+                    <section>
+                        <h3>Compilado automático</h3>
+                        <p>Si queremos que cada que modificamos nuestro archivo Sass se compile el CSS</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```bash
+                                > sass --watch input.scss output.css 
+                                ```
+                            </script>
+                            O para directorios
+                            <script type="text/template">
+                                ```bash
+                                > sass --watch app/sass:public/stylesheets
+                                ```
+                            </script>
+                        </div>
+                        <a target="_blank" href="https://sass-lang.com/guide">https://sass-lang.com/guide</a>
+                    </section>
+                    <section>
+                        <h3>Variables</h3>
+                        <p>Se ocupa el símbolo "$" para definir y accesara variables</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                $font-stack:    Helvetica, sans-serif;
+                                $primary-color: #333;
+
+                                body {
+                                    font: 100% $font-stack;
+                                    color: $primary-color;
+                                }
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Anidado (Nesting)</h3>
+                        <p>Se ocupa el símbolo "$" para definir y accesara variables</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                nav {
+                                    ul {
+                                      margin: 0;
+                                      padding: 0;
+                                      list-style: none;
+                                    }
+                                  
+                                    li { display: inline-block; }
+                                  
+                                    a {
+                                      display: block;
+                                      padding: 6px 12px;
+                                      text-decoration: none;
+                                    }
+                                }
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Partials e @imports</h3>
+                        <p>Es posible insertar código de un archivo Scss a otro por medio del comando '@import'</p>
+                        <p>Aquel archivo a importarse debe guardarse con un '_' antes del nombre. Ej. '_reset.scss'</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                @import 'reset';
+                                ```
+                            </script>
+                        </div>
+                        <p>Para importarlo no es necesario poner ni el '_', ni la extención</p>
+                    </section>
+                    <section>
+                        <h3>@Mixins e @Include</h3>
+                        <p>Un mixin nos deja agrupar varias declaraciones de css, además de poder recibir parámetros</p>
+                        <p>Se ocupa '@include' con el nombre del mixin para aplicarlo</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                @mixin transform($property) {
+                                    -webkit-transform: $property;
+                                    -ms-transform: $property;
+                                    transform: $property;
+                                  }
+                                  
+                                .box { @include transform(rotate(30deg)); }                                  
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>@extend y Herencia</h3>
+                        <p>con la función de herencia es posible compartir un conjunto de propiedades CSS entre un selector y otro </p>
+                        <p>Se ocupa '%' para definir un conjunto a extender y '@extend' para aplicarlo en un selector</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                %message-shared {
+                                    border: 1px solid #ccc;
+                                    padding: 10px;
+                                    color: #333;
+                                }
+                                  
+                                .message {
+                                    @extend %message-shared;
+                                }
+                                
+                                .success {
+                                    @extend %message-shared;
+                                    border-color: green;
+                                }                                  
+                                ```
+                            </script>
+                        </div>
+                        <p>Esto evita tener varias veces la misma clase en los elementos HTML</p>
+                    </section>
+                    <section>
+                        <h3>Operadores matemáticos</h3>
+                        <p>Sass y Scss permiten el uso de varios operadores:  '+', '-', '*', '/', y '%'</p>
+                        <p>Se ocupa '%' para definir un conjunto a extender y '@extend' para aplicarlo en un selector</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                article[role="main"] {
+                                    float: left;
+                                    width: 600px / 960px * 100%;
+                                }                               
+                                ```
+                            </script>
+                        </div>
+                        <p>Esto evita tener varias veces la misma clase en los elementos HTML</p>
+                    </section>
+                    <section>
+                        <h3>Documentación</h3>
+                        <a target="_blank" href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html">https://sass-lang.com/documentation/file.SASS_REFERENCE.html</a>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>LESS</h1>
+                        <a target="_blank" href="http://lesscss.org/">http://lesscss.org/</a>
+                    </section>
+                    <section>
+                        <h3>Instalación</h3>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```bash
+                                > npm install -g less 
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Uso</h3>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```bash
+                                > lessc styles.less styles.css
+                                ```
+                            </script>
+                        </div>
+                        <a target="_blank" href="http://lesscss.org/usage/">http://lesscss.org/usage/</a>
+                    </section>
+                    <section>
+                        <h3>Variables</h3>
+                        <p>Se ocupa el símbolo "@" para definir y accesara variables</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                @nice-blue: #5B83AD;
+                                @light-blue: @nice-blue + #111;
+
+                                #header {
+                                    color: @light-blue;
+                                }
+                                ```
+                            </script>
+                        </div>
+                        <p>¡Es posible hacer operaciones con colores!</p>
+                    </section>
+                    <section>
+                        <h3>Anidado (Nesting)</h3>
+                        <p>Se ocupa el símbolo "$" para definir y accesara variables</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```less
+                                #header {
+                                    color: black;
+                                    .navigation {
+                                        font-size: 12px;
+                                    }
+                                    .logo {
+                                        width: 300px;
+                                    }
+                                }
+                                ```
+                            </script>
+                        </div>
+                        <p>'&' representa al padre del selector</p>
+                    </section>
+                    <section>
+                        <h3>Partials e @imports</h3>
+                        <p>Es posible insertar código de un archivo Scss a otro por medio del comando '@import'</p>
+                        <p>Aquel archivo a importarse debe guardarse con un '_' antes del nombre. Ej. '_reset.scss'</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                @import 'reset';
+                                ```
+                            </script>
+                        </div>
+                        <p>Para importarlo no es necesario poner ni el '_', ni la extención</p>
+                    </section>
+                    <section>
+                        <h3>@Mixins</h3>
+                        <p>Un mixin nos deja agrupar varias declaraciones de css, además de poder recibir parámetros</p>
+                        <p>Sólo es necesario usar el nombre de la clase dentro de la declaración de propiedades</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```less
+                                .bordered {
+                                    border-top: dotted 1px black;
+                                    border-bottom: solid 2px black;
+                                }
+
+                                #menu a {
+                                    color: #111;
+                                    .bordered;
+                                }
+                                  
+                                .post a {
+                                    color: red;
+                                    .bordered;
+                                }                                 
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>@extend y Herencia</h3>
+                        <p>con la función de herencia es posible compartir un conjunto de propiedades CSS entre un selector y otro </p>
+                        <p>Se ocupa '%' para definir un conjunto a extender y '@extend' para aplicarlo en un selector</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                %message-shared {
+                                    border: 1px solid #ccc;
+                                    padding: 10px;
+                                    color: #333;
+                                }
+                                    
+                                .message {
+                                    @extend %message-shared;
+                                }
+                                
+                                .success {
+                                    @extend %message-shared;
+                                    border-color: green;
+                                }                                  
+                                ```
+                            </script>
+                        </div>
+                        <p>Esto evita tener varias veces la misma clase en los elementos HTML</p>
+                    </section>
+                    <section>
+                        <h3>Operadores matemáticos</h3>
+                        <p>Sass y Scss permiten el uso de varios operadores:  '+', '-', '*', '/', y '%'</p>
+                        <p>Se ocupa '%' para definir un conjunto a extender y '@extend' para aplicarlo en un selector</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```scss
+                                article[role="main"] {
+                                    float: left;
+                                    width: 600px / 960px * 100%;
+                                }                               
+                                ```
+                            </script>
+                        </div>
+                        <p>Esto evita tener varias veces la misma clase en los elementos HTML</p>
+                    </section>
+                    <section>
+                        <h3>Documentación</h3>
+                        <a target="_blank" href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html">https://sass-lang.com/documentation/file.SASS_REFERENCE.html</a>
+                    </section>
+                </section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

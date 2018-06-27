@@ -1,0 +1,133 @@
+body{
+    max-width: 600px;
+    margin: auto;
+}
+
+header {
+    text-align: right;
+    font-size: 0.8em;
+}
+
+hr {
+    margin: 0;
+}
+
+h1 {
+    font-size: 5em;
+    margin: 10px 0;
+    line-height: 0.8;
+    text-align: center;
+}
+
+    h1 span.rojo {
+        color:red;
+        font-weight: bold;
+        font-family: 'Roboto Slab'
+    }
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7em;
+}
+
+/* FLEX POR DEFAULT HACE QUE LOS ELEMENTOS SE ACOMODEN EN RENGLONES  */
+
+.flex span {
+    align-self: center;
+}
+
+.mayus {
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 3em;
+    line-height: 0.8;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    text-align: justify;
+    font-size: 0.9em;
+    line-height: 1.2em;
+    margin-bottom: 10px; 
+}
+
+
+/* 
+    grid template columns define el numer de colunas
+    _____________
+    |   |   |   | 
+    |___|___|___| 
+    |   |   |   |
+    |___|___|___|
+
+    grid template rows define el numero de renglones
+*/
+
+    .grid .quote-container {
+        background-color: #ddd;
+        border: 1px solid #222;
+        position: relative;
+    }
+    /* ES NECESARIO EL POSITION RELATIVE EN EL CONTAINER PARA 
+    QUE SUS HIJOS CON POSITION ABSOLUTE LO USEN DE REFERENCIA  */
+
+
+        .grid .quote-container .quote {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 200px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* POSTITION ABSOLUTE OCUPA COMO REFERENCIA EL ANCENTRO 
+        MAS CERCANO QUE TENGA O POSITION RELATIVE O POSITION ABSOLUTE */
+
+        .grid .quote-container .quote::before {
+            content: "“";
+            font-size: 3em;
+            line-height: 1em;
+            line-height: 0em;
+            position: relative;
+            top: 15px;
+        }
+
+        .grid .quote-container .quote::after {
+            content: "”";
+            font-size: 3em;
+            line-height: 1em;
+            line-height: 0em;
+            position: relative;
+            top: 15px;
+        }
+        
+
+    .grid div:nth-child(2) {
+        grid-column: 2/4;
+    }
+
+    .grid .borde-izq {
+        border-left: 3px solid #aaa;
+        padding-left: 10px; 
+    }
+
+footer {
+    position: relative;
+    font-size: 0.8em;
+}
+
+footer #num-pag {
+    position: absolute;
+    right: 10px;
+}
+
+    

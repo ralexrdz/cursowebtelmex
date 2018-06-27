@@ -1,0 +1,30 @@
+body {
+  margin: 100vw / 2; }
+
+div {
+  border: 5px solid #444; }
+
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #5dd; }
+
+div.cuadrito {
+  border: 1px solid #5dd; }
+  div.cuadrito p {
+    margin-left: 30px; }
+    div.cuadrito p span {
+      background-color: #6a6; }
+
+div.grid5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); }
+
+div.grid6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); }
+
+div.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); }
+
+/*# sourceMappingURL=example.css.map */

@@ -10,11 +10,11 @@
     color: white;
 }
 
-#contenedor div {
-    position: absolute; 
-    height: 50px; 
-    width: 100px;
-}
+    #contenedor div {
+        position: absolute; 
+        height: 50px; 
+        width: 100px;
+    }
 
 #arriba-centrado {
     top:-25px; left: calc( 50% - 50px);

@@ -1,0 +1,25 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #5dd;
+$secondary-color: #6a6;
+
+@import 'parcial2';
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+div.cuadrito {
+    border: 1px solid $primary-color;
+
+    p {
+        margin-left: 30px;
+        span {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+div.grid5{ @include gridcols(5)}
+div.grid6{ @include gridcols(6)}
+div.grid3{ @include gridcols(3)}

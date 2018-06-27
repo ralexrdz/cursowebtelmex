@@ -58,16 +58,17 @@
                         <p>Se usa Sass para procesar los archivos de tipo '.sass' y '.scss'</p>
                         <div data-markdown>
                             <script type="text/template">
+                                para un único archivo
                                 ```bash
-                                > sass src/css/index.scss build/css/index.css
+                                > sass ruta/donde/esta/archivo.scss ruta/donde/pondra/archivo.css
+                                ```
+                                para transformar todos los archivos de una carpeta
+                                ```bash
+                                > sass ruta/archivos-sass/ ruta/archivos-css/
                                 ```
                             </script>
                         </div>
                         <a target="_blank" href="https://sass-lang.com/guide">https://sass-lang.com/guide</a>
-                    </section>
-                    <section>
-                        <h4>Diferencia entre SCSS y SASS</h4>
-                        <p>La diferencia está en la sintaxis, con SCSS es necesario poner ';' y '{...}'</p>
                     </section>
                     <section>
                         <h3>Compilado automático</h3>
@@ -77,15 +78,17 @@
                                 ```bash
                                 > sass --watch input.scss output.css 
                                 ```
-                            </script>
-                            O para directorios
-                            <script type="text/template">
+                                O para directorios
                                 ```bash
                                 > sass --watch app/sass:public/stylesheets
                                 ```
                             </script>
                         </div>
                         <a target="_blank" href="https://sass-lang.com/guide">https://sass-lang.com/guide</a>
+                    </section>
+                    <section>
+                        <h4>Diferencia entre SCSS y SASS</h4>
+                        <p>La diferencia está en la sintaxis, con SCSS es necesario poner ';' y '{...}'</p>
                     </section>
                     <section>
                         <h3>Variables</h3>
@@ -164,6 +167,8 @@
                         <h3>@extend y Herencia</h3>
                         <p>con la función de herencia es posible compartir un conjunto de propiedades CSS entre un selector y otro </p>
                         <p>Se ocupa '%' para definir un conjunto a extender y '@extend' para aplicarlo en un selector</p>
+                    </section>
+                    <section>
                         <div data-markdown>
                             <script type="text/template">
                                 ```scss

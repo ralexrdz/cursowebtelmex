@@ -1,0 +1,16 @@
+body {
+    margin: 100vw / 2;
+}
+
+@mixin borde($ancho, $color){
+    border: $ancho solid $color;
+}
+
+@mixin gridcols($numCol){
+    display: grid;
+    grid-template-columns: repeat($numCol, 1fr)
+}
+
+div {
+   @include borde(5px, #444)
+}

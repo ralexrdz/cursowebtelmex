@@ -1,0 +1,15 @@
+@for $i from 1 through 10 {
+    .item-#{$i} { width: 2em * $i; }
+}
+
+@for $i from 1 through 10 {
+    .flex-#{$i} { flex: $i; }
+}
+
+.flex {
+    display: flex;
+    div {
+        border: 1px solid black;
+    }
+}
+

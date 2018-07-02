@@ -23,3 +23,24 @@ div.cuadrito {
 div.grid5{ @include gridcols(5)}
 div.grid6{ @include gridcols(6)}
 div.grid3{ @include gridcols(3)}
+
+@mixin bordeMarginPaddin($borde, $espacio) {
+    border: $borde solid #000;
+    margin: $espacio;
+    padding: $espacio;
+}
+
+%background-primary {
+    background-color: $primary-color;
+}
+
+div.espacio10 {
+    @include bordeMarginPaddin(3px, 30px);
+    @extend %background-primary;
+    color: $secondary-color;
+    font-size: 2em;
+}
+
+div.espacio5 {
+    @include bordeMarginPaddin(10px, 5px);
+}

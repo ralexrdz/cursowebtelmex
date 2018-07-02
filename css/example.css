@@ -27,4 +27,19 @@ div.grid3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr); }
 
+div.espacio10 {
+  background-color: #5dd; }
+
+div.espacio10 {
+  border: 3px solid #000;
+  margin: 30px;
+  padding: 30px;
+  color: #6a6;
+  font-size: 2em; }
+
+div.espacio5 {
+  border: 10px solid #000;
+  margin: 5px;
+  padding: 5px; }
+
 /*# sourceMappingURL=example.css.map */

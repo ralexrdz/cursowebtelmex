@@ -1,0 +1,66 @@
+.item-1 {
+  width: 2em; }
+
+.item-2 {
+  width: 4em; }
+
+.item-3 {
+  width: 6em; }
+
+.item-4 {
+  width: 8em; }
+
+.item-5 {
+  width: 10em; }
+
+.item-6 {
+  width: 12em; }
+
+.item-7 {
+  width: 14em; }
+
+.item-8 {
+  width: 16em; }
+
+.item-9 {
+  width: 18em; }
+
+.item-10 {
+  width: 20em; }
+
+.flex-1 {
+  flex: 1; }
+
+.flex-2 {
+  flex: 2; }
+
+.flex-3 {
+  flex: 3; }
+
+.flex-4 {
+  flex: 4; }
+
+.flex-5 {
+  flex: 5; }
+
+.flex-6 {
+  flex: 6; }
+
+.flex-7 {
+  flex: 7; }
+
+.flex-8 {
+  flex: 8; }
+
+.flex-9 {
+  flex: 9; }
+
+.flex-10 {
+  flex: 10; }
+
+.flex {
+  display: flex; }
+  .flex div {
+    border: 1px solid black; }
+
+/*# sourceMappingURL=for.css.map */

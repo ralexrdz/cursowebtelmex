@@ -57,30 +57,11 @@ h2 {
     font-size: 0.9em;
     line-height: 1.2em;
     margin-bottom: 10px; 
-}
-
-
-/* 
-    grid template columns define el numer de colunas
-    _____________
-    |   |   |   | 
-    |___|___|___| 
-    |   |   |   |
-    |___|___|___|
-
-    grid template rows define el numero de renglones
-*/
-
-    .grid .quote-container {
+    .quote-container {
         background-color: #ddd;
         border: 1px solid #222;
         position: relative;
-    }
-    /* ES NECESARIO EL POSITION RELATIVE EN EL CONTAINER PARA 
-    QUE SUS HIJOS CON POSITION ABSOLUTE LO USEN DE REFERENCIA  */
-
-
-        .grid .quote-container .quote {
+        .quote {
             position: absolute;
             bottom: 0;
             right: 0;
@@ -88,6 +69,8 @@ h2 {
             padding: 10px;
             text-align: center;
         }
+    }
+}
 
         /* POSTITION ABSOLUTE OCUPA COMO REFERENCIA EL ANCENTRO 
         MAS CERCANO QUE TENGA O POSITION RELATIVE O POSITION ABSOLUTE */
@@ -129,5 +112,3 @@ footer #num-pag {
     position: absolute;
     right: 10px;
 }
-
-    

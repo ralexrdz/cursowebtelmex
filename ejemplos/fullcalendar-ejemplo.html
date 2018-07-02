@@ -33,6 +33,13 @@
             if (fin._i - inicio._i > 86400000) newEvent.end = moment(fin).format()
             $('#calendar').fullCalendar('renderEvent', newEvent)
         },
+        eventClick: function (event, element) {
+            let color = prompt("Nuevo Color")
+            let titulo = prompt("Nuevo titulo")
+            event.color = color
+            if (titulo) event.title = titulo
+            $('#calendar').fullCalendar('updateEvent', event)
+        },
         navLinks: true
     //   editable: true,
     //   eventLimit: true, // allow "more" link when too many events

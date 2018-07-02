@@ -16,9 +16,22 @@
     $('#calendar').fullCalendar({
         defaultDate: '2018-03-12',
         // header: { center: 'month,agendaWeek,day' },
-        dayClick: function(objetoMoment) {
-            console.log(objetoMoment)
-            alert('a day has been clicked!');
+        // dayClick: function(objetoMoment) {
+        //     console.log(objetoMoment)
+        //     alert('a day has been clicked!');
+        // },
+        selectable: true,
+        select: function (inicio, fin) {
+            var titulo = prompt('Título del evento')
+            if (!titulo) return
+            var allDay = !inicio.hasTime && !fin.hasTime
+            var newEvent = new Object()
+            console.log(fin._i - inicio._i)
+            newEvent.title = titulo
+            newEvent.start = moment(inicio).format()
+            newEvent.allDay = false
+            if (fin._i - inicio._i > 86400000) newEvent.end = moment(fin).format()
+            $('#calendar').fullCalendar('renderEvent', newEvent)
         },
         navLinks: true
     //   editable: true,

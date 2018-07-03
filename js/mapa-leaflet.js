@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox.streets'
+		id: 'mapbox.satellite'
     }).addTo(map);
     let marker1 = L.marker([19.4, -99.4]).addTo(map)
     let marker2 = L.marker([19.5, -99.5]).addTo(map)
@@ -44,9 +44,9 @@ function finishPolygon() {
     document.getElementById("draw-polygon").setAttribute("disabled", true)
     document.getElementById("start-polygon").removeAttribute("disabled")
     map.off('click', onMapClick)
-    // let coords = "<ul>" + pointsArray.map(p => `<li>${p}</li>`).join('') + "</ul>"
-    // L.polygon(pointsArray,{}).bindPopup(coords).addTo(map)
-    L.polygon(pointsArray,{}).addTo(map)
+    let coords = "<ul>" + pointsArray.map(p => `<li>${p}</li>`).join('') + "</ul>"
+    L.polygon(pointsArray,{}).bindPopup(coords).addTo(map)
+    // L.polygon(pointsArray,{}).addTo(map)
 }
 
 function showLocation () {

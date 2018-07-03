@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox.dark'
+		id: 'mapbox.streets'
     }).addTo(map);
     let marker1 = L.marker([19.4, -99.4]).addTo(map)
     let marker2 = L.marker([19.5, -99.5]).addTo(map)
@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     marker3.bindTooltip("Aloha")
     marker4.bindTooltip("YOLO")
     markerTelmexHub.bindTooltip("TelmexHub")
-
-    
 })
 
 function onMapClick(e) {
@@ -49,4 +47,17 @@ function finishPolygon() {
     // let coords = "<ul>" + pointsArray.map(p => `<li>${p}</li>`).join('') + "</ul>"
     // L.polygon(pointsArray,{}).bindPopup(coords).addTo(map)
     L.polygon(pointsArray,{}).addTo(map)
+}
+
+function showLocation () {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(moveToLocation)
+    } else {
+        console.log("No tienes acceso a GPS")
+    }
+}
+
+function moveToLocation (position) {
+    console.log(position)
+    map.flyTo([position.coords.latitude, position.coords.longitude], 16)
 }

@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>NodeJS</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <section>
+                        <h1>NODE JS</h1>
+                        <a href="http://nodejs.org">http://nodejs.org</a>
+                    </section>
+                    <section>
+                        <h2>Lenguaje de programación</h2>
+                        <p>Basado en la sintaxis de Javascript</p>
+                        <p>Event Loop</p>
+                        <p>Event Driven Programing</p>
+						<p>Lenguaje de alto nivel</p>
+                    </section>
+                    <section data-markdown>
+                        <h3>Comandos node</h3>
+						<script type="text/template">
+                            Para abrir la terminal de NodeJS
+
+                            ```
+                            > node
+                            ```
+
+                            Para correr un archivo .js 
+
+                            ``` 
+                            > node archivo.js
+                            ```
+
+                            Para saber la versión de node 
+
+                            ```
+                            > node --version `
+							```
+						</script>
+					</section>
+					<section>
+						<h3>NPM</h3>
+						<p>Manejador de Packetes de NODE</p>
+                        <p>Ayuda a poder replicar un ambiente fácilmente</p>
+                        <ul>
+                            <li>Ambiente de desarrollo</li>
+                            <li>Ambiente de producción</li>
+                            <li>Pruebas (Test Driven Dev)</li>
+                        </ul>
+                        <p>La información de replicación se guarda en el archivo de configuración <b>package.json</b></p>
+					</section>
+                    <section>
+						<h3>Comandos NPM</h3>
+                        <div data-markdown>
+                            <script type="text/template">
+                                Para saber la versión de npm 
+    
+                                ```
+                                > npm --version `
+                                ```
+                                
+                                Primer comando para iniciar un proyecto en NodeJs. 
+                                Crear un archivo de configuración package.json
+    
+                                ```
+                                > npm init
+                                ```
+    
+                                Instalar un packete de NodeJS 
+    
+                                ``` 
+                                > npm (install / i) (--save / -s) <package-name>@v#.#.#
+                                ```
+                                
+                            </script>
+                        </div>
+                        <p>continua...</p>
+					</section>
+                    <section>
+                        <p>...continuación</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                Instalar todos los packetes descritos en las dependencias del archivo de configuración package.json
+    
+                                ``` 
+                                > npm install
+                                ```
+                                
+                                Updatear un packete
+                                
+                                ``` 
+                                > npm update <package-name>
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                </section>
+                <section>                    
+                    <section>
+                        <h3>Callbacks</h3>
+                        <p>Es una función que se llama al terminar una instrucción</p>
+                        <p>Ej código bloqueador:</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```
+                                var fs = require("fs");
+                                
+                                var data = fs.readFileSync('input.txt');
+                                
+                                console.log(data.toString());
+                                console.log("Program Ended");
+                                ```
+                            </script>
+                        </div>
+                        <p>continúa...</p>
+                    </section>
+                    <section>
+                        <p>continuación...</p>
+                        <p>Ej código NO bloqueador:</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```
+                                var fs = require("fs");
+                                
+                                fs.readFile('input.txt', function (err, data) {
+                                    if (err) return console.error(err);
+                                    console.log(data.toString());
+                                });
+                                
+                                console.log("Program Ended")
+                                ```
+                            </script>
+
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Eventos</h3>
+                        <p>En una aplicación impulsada por eventos, generalmente hay un bucle principal que escucha eventos y luego activa una función de devolución de llamada cuando se detecta uno de esos eventos.</p>
+                        <img src="../event_loop.jpg" alt="">
+                    </section>
+                    <section>
+                        <p>El nodo usa un patrón de observador. El hilo del nodo mantiene un bucle de evento y cada vez que se completa una tarea, dispara el evento correspondiente que señala la ejecución de la función del detector de eventos</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```js
+                                // Import events module
+                                var events = require('events');
+
+                                // Create an eventEmitter object
+                                var eventEmitter = new events.EventEmitter();
+
+                                // Create an event handler as follows
+                                var connectHandler = function connected() {
+                                    console.log('connection succesful.');
+                                    
+                                    // Fire the data_received event 
+                                    eventEmitter.emit('data_received');
+                                }
+                                ```
+                            </script>
+                        </div>
+                        <p>continúa...</p>
+                    </section>
+                    <section>
+                        <p>...continuación</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                ```js
+
+                                // Bind the connection event with the handler
+                                eventEmitter.on('connection', connectHandler);
+                                
+                                // Bind the data_received event with the anonymous function
+                                eventEmitter.on('data_received', function(){
+                                    console.log('data received succesfully.');
+                                });
+
+                                // Fire the connection event 
+                                eventEmitter.emit('connection');
+
+                                console.log("Program Ended.");
+                                ```
+                            </script>
+                        </div>
+                    </section>
+				</section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -36,6 +36,27 @@
                         <p>Event Driven Programing</p>
 						<p>Lenguaje de alto nivel</p>
                     </section>
+                    <section>
+                        <h2>Instalación</h2>
+                        <p>Es posible instalar Node via apt-get, pero recomendamos usar en vez nvm</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                1. instalar nvm (node version manager)
+
+                                ```
+                                > curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+                                ```
+                                    
+                                2. Cerrar la terminal y volverla a abrir
+                                    
+                                3. instalar node usando nvm
+
+                                ```
+                                > nvm install node
+                                ```
+                            </script>
+                        </div>
+                    </section>
                     <section data-markdown>
                         <h3>Comandos node</h3>
 						<script type="text/template">
@@ -54,7 +75,7 @@
                             Para saber la versión de node 
 
                             ```
-                            > node --version `
+                            > node --version
 							```
 						</script>
 					</section>
@@ -76,7 +97,7 @@
                                 Para saber la versión de npm 
     
                                 ```
-                                > npm --version `
+                                > npm --version
                                 ```
                                 
                                 Primer comando para iniciar un proyecto en NodeJs. 
@@ -203,7 +224,119 @@
                             </script>
                         </div>
                     </section>
-				</section>
+                </section>
+                <section>
+                    <section>
+                        <h1>require y module.exports</h1>
+                    </section>
+                    <section>
+                        <p>Se ocupan estas funciones para compartir acceso a ciertas partes de un programa</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                Para importar
+
+                                ```js
+                                let libName = require('./ruta/a/lib.js') // para importar
+
+
+                                ```
+                                
+                                Para exportar
+                                ```js
+                                module.export { <funciones o variables a exportar>} // para exportar
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <p>En ES6</p>
+                        <div data-markdown>
+                            <script type="text/template">
+                                Para importar
+
+                                ```js
+                                import * as todaLaLibreria from './ruta/a/lib.js' 
+                                // para importar con Babel
+                                // .mjs con modulos experimentales
+
+                                ```
+                                
+                                Para exportar
+                                ```js
+                                export { <funciones o variables a exportar>} // para exportar
+                                ```
+                            </script>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section><h1>HTTP Server</h1></section>
+                    <section>
+                        <div data-markdown>
+                            <script type="text/template">
+                            ```js
+                            var http = require("http")
+                                
+                            http.createServer(function (request, response) {
+                                // Send the HTTP header 
+                                // HTTP Status: 200 : OK
+                                // Content Type: text/plain
+                                response.writeHead(200, {'Content-Type': 'text/plain'});
+                                
+                                // Send the response body as "Hello World"
+                                response.end('Hello World\n');
+                             }).listen(8081);
+                             
+                             // Console will print the message
+                             console.log('Server running at http://127.0.0.1:8081/');
+                            ```
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <div data-markdown>
+                            <script type="text/template">
+                            ```js
+                            var http = require('http');
+                            var fs = require('fs');
+                            var url = require('url');
+
+                            // Create a server
+                            http.createServer( function (request, response) {  
+                            // Parse the request containing file name
+                            var pathname = url.parse(request.url).pathname;
+                            
+                            // Print the name of the file for which request is made.
+                            console.log("Request for " + pathname + " received.");
+                            
+                            // Read the requested file content from file system
+                            fs.readFile(pathname.substr(1), function (err, data) {
+                                if (err) {
+                                    console.log(err);
+                                    // HTTP Status: 404 : NOT FOUND
+                                    // Content Type: text/plain
+                                    response.writeHead(404, {'Content-Type': 'text/html'});
+                                }else {	
+                                    //Page found	  
+                                    // HTTP Status: 200 : OK
+                                    // Content Type: text/plain
+                                    response.writeHead(200, {'Content-Type': 'text/html'});	
+                                    
+                                    // Write the content of the file to response body
+                                    response.write(data.toString());		
+                                }
+                                // Send the response body 
+                                response.end();
+                            });   
+                            }).listen(8081);
+
+                            // Console will print the message
+                            console.log('Server running at http://127.0.0.1:8081/');
+                            ```
+                            </script>
+                        </div>
+                    </section>
+                </section>
 			</div>
 		</div>
 

@@ -98,6 +98,17 @@
             </code></pre>
           </section>
           <section>
+              <h2>ng-if</h2>
+              <p>Se utiliza para validar una expresion y mostrar o no un contenido HTML según la expresion</p>
+              <pre><code class="hljs">
+  <div ng-app="" ng-init="x=15">
+      &lt;p&gt;Name: &lt;input type="text" ng-model="x"&gt;&lt;/p&gt;
+    <div ng-if="x>10">x es mayor que 10</div>
+    <div ng-if="x<10">x es menor que 10</div>
+  </div>
+              </code></pre>
+            </section>
+          <section>
             <h2>ng-controller</h2>
             <p>define el controlador para una ng-app</p>
           </section>

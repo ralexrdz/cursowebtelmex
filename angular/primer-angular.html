@@ -18,10 +18,21 @@
                 'pezzz'
             ]
         };
-        arreglo=['a','b','c','d','e']
+        arreglo=['a','b','c','d','e'];
+        x=20;
     ">
         <p>Name: <input type="text" ng-model="user.name"></p>
-        <p>Name: <input type="text" ng-model="user.lastname"></p>
+        <p>Lastname: <input type="text" ng-model="user.lastname"></p>
+        <p>X: <input type="number" ng-model="x"></p>
+        <div ng-if="x>10">
+            X es mayor a 10
+        </div>
+        <div ng-if="x>20">
+            X es mayor a 20
+        </div>
+        <div ng-if="x<5">
+            X es menor que 5
+        </div>
         <h1 ng-bind="user.name">Hola</h1>
         <h2 ng-bind="user.lastname"></h2>
         <h3>Hola {{user.name + " " + user.lastname}}</h3>

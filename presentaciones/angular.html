@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bootstrap</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section>
+          <section>
+            <h1>ANGULAR</h1>
+            <a href="https://angularjs.org/">https://angularjs.org/</a>
+          </section>
+          <section>
+            <p>Es un framework de Javascript que se agrega via un tag "script" a una página HTML </p>
+            <p>AngularJS extiende los atributos HTML con <b>Directivas</b> (ng-directives), y vincula datos en el HTML con <b>Expresiones</b></p>
+          </section>
+          
+        </section>
+        <section>
+          <section>
+            <h1>DIRECTIVAS</h1>
+          </section>
+          <section>
+						<h2>ng-app</h2>
+            <p>Es la directiva que define una aplicación de Angular</p>
+          </section>
+          <section>
+						<h2>ng-model</h2>
+            <p>Es la directiva que vincula el valor de un tag de control de HTML (input, select, textarea) a los datos de la aplicación</p>
+            <p>Puede ser usada para validación de datos</p>
+            <p>o para darle clases de CSS a elementos HTML</p>
+          </section>
+          <section>
+						<h2>ng-bind</h2>
+            <p>Es la directiva que vincula un valor de los datos de la aplicación a la vista del HTML </p>
+          </section>
+          <section>
+            <pre><code class="hljs">
+&lt;script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"&gt;&lt;/script&gt;
+&lt;body&gt;
+&lt;div ng-app=""&gt;
+  &lt;p&gt;Name: &lt;input type="text" ng-model="name"&gt;&lt;/p&gt;
+  &lt;p ng-bind="name"&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>
+          </section>
+          <section>
+            <p>AngularJS empieza automáticamente cuando la página termina de cargar</p>
+            <p>La directiva ng-app le dice a AngularJS que el elemento &lt;div&gt; es el dueño de la aplicación.</p>
+            <p>La directiva ng-model vincula el valor del &lt;input&gt; a la variable "name" de la aplicación</p>
+            <p>La directiva ng-bind bincula el inner HTML del elemento &lt;p&gt; a la variable "name" de la aplicación </p>
+          </section>
+          <section>
+            <h2>ng-init</h2>
+            <p>Dentro del elemento que contenga ng-app, puedes inicializar variables utilizando la directiva ng-init</p>
+            <p>Aunque no es muy común, dado que normalmente se hace en los Controladores o los Modulos</p>
+            <pre><code class="hljs">
+<div ng-app="" ng-init="firstName='John'">
+  <p>Name: <input type="text" ng-model="firstName"></p>
+  <p>You wrote: {{ firstName }}</p>
+</div>
+            </code></pre>
+          </section>
+          <section>
+            <h2>ng-repeat</h2>
+            <p>Se utiliza para repetir contenido html para cada elemento de una colección (arreglo)</p>
+            <pre><code class="hljs">
+<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+  <ul>
+    <li ng-repeat="x  in names">
+      {{ x.name + ', ' + x.country }}
+    </li>
+  </ul>
+</div>
+            </code></pre>
+          </section>
+          <section>
+            <h2>ng-controller</h2>
+            <p>define el controlador para una ng-app</p>
+          </section>
+				</section>
+        <section>
+          <section>
+            <h1>Expresiones</h1>
+          </section>
+          <section data-markdown>
+            Las expresiones de Angular se escriben dentro de llaves dobles `{{ expresion }}` (igual que en Handlebarss)
+
+            Las expresiones vinculos los datos al html de la misma manera que la directiva `ng-bind`
+
+            El resultado estará exactamento donde la expresión esté escrita
+
+          </section>
+          <section>
+              <p>Las expresiones funcionan parecido a Javascript. Pueden contener: </p>
+              <ul>
+                <li> literales</li>
+                <li> operadores</li>
+                <li> variables</li>
+              </ul>
+              <p>Salvo que no pueden contener</p>
+              <ul>
+                  <li> condicionales</li>
+                  <li> loops</li>
+                </ul>
+              <pre><code class="hljs">
+<div ng-app="">
+  <p>My first expression: {{ 5 + 5 }}</p>
+</div>
+              </code></pre>
+          </section>
+          <section>
+              <p>Las expresiones vinculan a los datos al HTML de la misma manera que la directiva ng-bind</p>
+              <pre><code class="hljs">
+<div ng-app="">
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p>{{name}}</p>
+</div>
+              </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Modulos</h1>
+          </section>
+          <section>
+            <p>Los Modules de Angular defininen una aplicación</p>
+            <p>Son contenedores para diferentes partes de una aplicación</p>
+            <p>Son contenedores de los Controladores</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Controladores</h1>
+          </section>
+          <section>
+            <p>Controlan los datos de una aplicación de Angular</p>
+            <p>Los Controladores siempre pertenecen a un modulo</p>
+          </section>
+          <section>
+              <pre><code class="hljs">
+  <div ng-app="myApp" ng-controller="myCtrl">
+  
+  First Name: <input type="text" ng-model="firstName"><br>
+  Last Name: <input type="text" ng-model="lastName"><br>
+  <br>
+  Full Name: {{firstName + " " + lastName}}
+  
+  </div>
+  
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+      $scope.firstName = "John";
+      $scope.lastName = "Doe";
+  });
+  </script>              
+              </code></pre>
+            </section>
+            <section>
+              <p>myCtrl es una función JS</p>
+              <p>Angular invoca el controlador con un objeto $scope</p>
+              <p>$scope es el objeto de la aplicación. Contiene sus variables y sus funciones</p>
+            </section>
+            <section>
+              <p>Si cambiaramos</p>
+              <pre><code class="hljs">
+Full Name: {{fullName()}}
+
+<script>
+  var app = angular.module('myApp', []);
+  app.controller('personCtrl', function($scope) {
+      $scope.firstName = "John";
+      $scope.lastName = "Doe";
+      $scope.fullName = function() {
+          return $scope.firstName + " " + $scope.lastName;
+      }
+  });
+</script>
+              </code></pre>
+            </section>
+            <section>
+              <p>Siempre podemos guardar nuestros Controladores en un archivo externo</p>
+              <pre><code class="hljs">
+<script src="personController.js"></script>                
+              </code></pre>
+            </section>
+        </section>
+        
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <div ng-app="" ng-init="
+        user={
+            name: 'Ralex',
+            lastname: 'Rdz',
+            pets:[
+                'perrshito',
+                'gatits',
+                'pezzz'
+            ]
+        };
+        arreglo=['a','b','c','d','e']
+    ">
+        <p>Name: <input type="text" ng-model="user.name"></p>
+        <p>Name: <input type="text" ng-model="user.lastname"></p>
+        <h1 ng-bind="user.name">Hola</h1>
+        <h2 ng-bind="user.lastname"></h2>
+        <h3>Hola {{user.name + " " + user.lastname}}</h3>
+        <p>{{25 *10}} --- {{33 - 15}}</p>
+        <p>valor de la posicion 0: {{arreglo[0]}}</p>
+        <p> valor de la posicion 4: {{arreglo[4]}}</p>
+        <h4>Letras</h4>
+        <ul>
+            <li ng-repeat="letra in arreglo">{{letra}}</li>
+        </ul>
+        <h4>Mascotas de {{user.name}}</h4>
+        <ul>
+            <li ng-repeat="pet in user.pets">{{pet}}</li>
+        </ul>
+    </div>
+</body>
+</html>

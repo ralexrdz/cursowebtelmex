@@ -40,17 +40,17 @@
             <h1>DIRECTIVAS</h1>
           </section>
           <section>
-						<h2>ng-app</h2>
+						<h2 style="text-transform: none">ng-app</h2>
             <p>Es la directiva que define una aplicación de Angular</p>
           </section>
           <section>
-						<h2>ng-model</h2>
+						<h2 style="text-transform: none">ng-model</h2>
             <p>Es la directiva que vincula el valor de un tag de control de HTML (input, select, textarea) a los datos de la aplicación</p>
             <p>Puede ser usada para validación de datos</p>
             <p>o para darle clases de CSS a elementos HTML</p>
           </section>
           <section>
-						<h2>ng-bind</h2>
+						<h2 style="text-transform: none">ng-bind</h2>
             <p>Es la directiva que vincula un valor de los datos de la aplicación a la vista del HTML </p>
           </section>
           <section>
@@ -71,7 +71,7 @@
             <p>La directiva ng-bind bincula el inner HTML del elemento &lt;p&gt; a la variable "name" de la aplicación </p>
           </section>
           <section>
-            <h2>ng-init</h2>
+            <h2 style="text-transform: none">ng-init</h2>
             <p>Dentro del elemento que contenga ng-app, puedes inicializar variables utilizando la directiva ng-init</p>
             <p>Aunque no es muy común, dado que normalmente se hace en los Controladores o los Modulos</p>
             <pre><code class="hljs">
@@ -82,7 +82,7 @@
             </code></pre>
           </section>
           <section>
-            <h2>ng-repeat</h2>
+            <h2 style="text-transform: none">ng-repeat</h2>
             <p>Se utiliza para repetir contenido html para cada elemento de una colección (arreglo)</p>
             <pre><code class="hljs">
 <div ng-app="" ng-init="names=[
@@ -98,7 +98,7 @@
             </code></pre>
           </section>
           <section>
-              <h2>ng-if</h2>
+              <h2 style="text-transform: none">ng-if</h2>
               <p>Se utiliza para validar una expresion y mostrar o no un contenido HTML según la expresion</p>
               <pre><code class="hljs">
   <div ng-app="" ng-init="x=15">
@@ -109,7 +109,7 @@
               </code></pre>
             </section>
           <section>
-            <h2>ng-controller</h2>
+            <h2 style="text-transform: none">ng-controller</h2>
             <p>define el controlador para una ng-app</p>
           </section>
 				</section>
@@ -220,7 +220,102 @@ Full Name: {{fullName()}}
               </code></pre>
             </section>
         </section>
-        
+        <section>
+          <section>
+            <h1>Servicios</h1>
+          </section>
+          <section>
+            <p>Los servicios son objetos o funciones que están disponibles exclusivamente para la Aplicación Angular</p>
+          </section>
+          <section>
+            <h2 style="text-transform: none">$location</h2>
+            <p>Es un servicio que contiene métodos para accesar a información sobre la ubicación de la página</p>
+            <pre>
+              <code>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $location) {
+    $scope.myUrl = $location.absUrl();
+});                 
+              </code>
+            </pre>
+            <p>Es importante pasar como argumento de la función del controlador</p>
+          </section>
+          <section>
+            <h2 style="text-transform: none">$http</h2>
+            <p>Es un servicio para hacer solicitudes http a un servidor y controlar la respuesta</p>
+            <pre>
+              <code>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    $http.get("welcome.htm").then(function (response) {
+        $scope.myWelcome = response.data;
+    });
+});                 
+              </code>
+            </pre>
+            <a href="https://www.w3schools.com/angular/angular_http.asp" target="_blanc">Más información</a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Ruteo</h1>
+          </section>
+          <section>
+            <h2 style="text-transform: none">ngRoute</h2>
+            <p> A travez del modulo ngRoute podemos hacer que nuestra app se comporte como una Single Page App: Que no requiera refrescar para cambiar de página</p>
+            <p>Es necesario importar el módulo route</p>
+            <pre><code class="hljs">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+            </code></pre>
+          </section>
+          <section>
+            <h3 style="text-transform: none">$routeProvider</h2>
+            <p>Hay que agregar ngRoute como dependencia al inicializar nuestro modulo</p>
+            <pre><code>
+var app = angular.module("myApp", ["ngRoute"]);               
+            </code></pre>
+            <p>Eso nos permite acceder al objeto $routeProvider en nuestro controlador</p>
+          </section>
+          <section>
+            <h3 style="text-transform: none">ng-view</h3>
+            <p>Es necesario un contenedor para la vista que estamos importando</p>
+            <pre><code>
+<ng-view></ng-view>               
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="hljs">
+&lt;body ng-app="myApp"&gt;
+
+    <p><a href="#/!">Main</a></p>
+    
+    <a href="#!red">Red</a>
+    <a href="#!green">Green</a>
+    <a href="#!blue">Blue</a>
+    
+    <div ng-view></div>
+    
+    <script>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(function($routeProvider) {
+        $routeProvider
+        .when("/", {
+            templateUrl : "main.htm"
+        })
+        .when("/red", {
+            templateUrl : "red.htm"
+        })
+        .when("/green", {
+            templateUrl : "green.htm"
+        })
+        .when("/blue", {
+            templateUrl : "blue.htm"
+        });
+    });
+    </script>              
+            </code></pre>
+          </section>
+        </section>
 			</div>
 		</div>
 

@@ -1,5 +1,6 @@
 console.log('insert-persona')
-app.controller('insertPersona', function($scope, $http) {
+app.controller('insertPersona', function($scope, $http, $interval, Data) {
+    $scope.numPersonas = 0
     $scope.insertaPersona = function () {
         let data = {}
         data.name = $scope.name
@@ -11,6 +12,15 @@ app.controller('insertPersona', function($scope, $http) {
             data
         ).then(function (res) {
             console.log(res)
+            Data.personas.push(res.data.ops[0])
+            $scope.name = ''
+            $scope.lastname = ''
+            $scope.edad = ''
+            // Meter este nuevo resultado en Data 
+            // y que se vea reflejado en el controlador de get-personas
         })
     }
+    $interval(function (){
+        $scope.numPersonas = Data.personas.length
+    }, 1000)
 });

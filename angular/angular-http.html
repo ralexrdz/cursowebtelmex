@@ -21,6 +21,7 @@
         </div>
         <div ng-controller="insertPersona">
             <h2>Nueva persona</h2>
+            <p>Numero de personas actualmente: {{numPersonas}}</p>
             <div>
                 <label for="name">Name: </label>
                 <input ng-model="name" type="text" id="name" name="name">
@@ -37,6 +38,7 @@
         </div>
     </div>   
     <script src="default-module.js"></script>
+    <script src="personas-factory.js"></script>
     <script src="get-personas.js"></script> 
     <script src="insert-persona.js"></script> 
 </body>

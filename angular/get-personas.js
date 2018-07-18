@@ -1,5 +1,5 @@
-var app = angular.module('appHttp', []);
-app.controller('contHttp', function($scope, $http) {
+console.log('get-personas')
+app.controller('getPersonas', function($scope, $http) {
     $scope.personas = []
     $http.get('http://localhost:3000/personas')
     .then(function (res) {

@@ -8,16 +8,36 @@
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-    <div ng-app="appHttp" ng-controller="contHttp">
-        <h1>Personas</h1>
-        <ul>
-            <li ng-repeat="p in personas">
-                {{p.name}} -
-                <span ng-if="p.edad"> tiene {{p.edad}}</span>
-                <span ng-if="!p.edad"> no tiene edad</span>
-            </li>
-        </ul>
+    <div ng-app="appHttp">
+        <div ng-controller="getPersonas">
+            <h1>Personas</h1>
+            <ul>
+                <li ng-repeat="p in personas">
+                    {{p.name}} -
+                    <span ng-if="p.edad"> tiene {{p.edad}}</span>
+                    <span ng-if="!p.edad"> no tiene edad</span>
+                </li>
+            </ul>
+        </div>
+        <div ng-controller="insertPersona">
+            <h2>Nueva persona</h2>
+            <div>
+                <label for="name">Name: </label>
+                <input ng-model="name" type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="lastname">Lastname: </label>
+                <input ng-model="lastname" type="text" id="lastname" name="lastname">
+            </div>
+            <div>
+                <label for="edad">Age: </label>
+                <input ng-model="edad" type="text" id="edad" name="edad">
+            </div>
+            <button ng-click="insertaPersona()">Agregar persona</button>
+        </div>
     </div>   
-    <script src="http-controller.js"></script> 
+    <script src="default-module.js"></script>
+    <script src="get-personas.js"></script> 
+    <script src="insert-persona.js"></script> 
 </body>
 </html>

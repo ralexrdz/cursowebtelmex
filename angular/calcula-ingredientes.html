@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <div ng-app="" ng-init="pastel = {
+       harina: 100,
+       azucar: 20,
+       huevo: 50,
+       chocolate: 10,
+       leche: 100
+   
+   };  
+   persona = {cantidad : 1}
+   ">
+        <p>Cantidad de personas :
+            <input type="number" ng-model="persona.cantidad">
+        </p>
+        <h1 ng-bind="persona.cantidad">Hola</h1>
+        <h1 ng-bind="pastel.harina">Hola</h1>
+        <h2>Los ingredientes necesarios para el pastel son :</h2>
+        <p>
+            {{pastel.harina*persona.cantidad}} gramos de harina
+        </p>
+        <p>
+            {{pastel.azucar*persona.cantidad}} gramos de azucar
+        </p>
+        <p>
+            {{pastel.huevo*persona.cantidad}} gramos de huevo
+        </p>
+        <p>
+            {{pastel.chocolate*persona.cantidad}} gramos de chocolate
+        </p>
+        <p>
+            {{pastel.leche*persona.cantidad}} mililitros de leche
+        </p>
+    </div>
+</body>
+
+</html>

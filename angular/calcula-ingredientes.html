@@ -10,24 +10,14 @@
 
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-    <div ng-app="" ng-init="pastel = {
-       harina: 100,
-       azucar: 20,
-       huevo: 50,
-       chocolate: 10,
-       leche: 100
-   
-   };  
-   persona = {cantidad : 1}
-   ">
+    <div ng-app="appIngredientes" ng-controller="contIngredientes" >
         <p>Cantidad de personas :
             <input type="number" ng-model="persona.cantidad">
         </p>
-        <h1 ng-bind="persona.cantidad">Hola</h1>
-        <h1 ng-bind="pastel.harina">Hola</h1>
+        <p>{{myUrl}}</p>
         <h2>Los ingredientes necesarios para el pastel son :</h2>
         <p>
-            {{pastel.harina*persona.cantidad}} gramos de harina
+            {{calculaHarina()}} gramos de harina
         </p>
         <p>
             {{pastel.azucar*persona.cantidad}} gramos de azucar
@@ -42,6 +32,20 @@
             {{pastel.leche*persona.cantidad}} mililitros de leche
         </p>
     </div>
+    <script src="module-ingredientes.js"></script>
 </body>
+
+<!-- 
+    ng-init="pastel = {
+       harina: 100,
+       azucar: 20,
+       huevo: 50,
+       chocolate: 10,
+       leche: 100
+   
+   };  
+   persona = {cantidad : 1}
+   "
+ -->
 
 </html>

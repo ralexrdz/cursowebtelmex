@@ -1,15 +1,18 @@
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "main.htm"
+        templateUrl : "./main.html"
     })
     .when("/red", {
-        templateUrl : "red.htm"
+        templateUrl : "./red.html"
     })
     .when("/green", {
-        templateUrl : "green.htm"
+        templateUrl : "./green.html"
     })
     .when("/blue", {
-        templateUrl : "blue.htm"
+        templateUrl : "./blue.html"
+    })
+    .when("/prueba", {
+        template: "<h1>PRueba</h1>"
     });
 });

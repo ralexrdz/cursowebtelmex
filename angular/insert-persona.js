@@ -1,6 +1,7 @@
 console.log('insert-persona')
 app.controller('insertPersona', function($scope, $http, $interval, Data) {
     $scope.numPersonas = 0
+    $scope
     $scope.insertaPersona = function () {
         let data = {}
         data.name = $scope.name

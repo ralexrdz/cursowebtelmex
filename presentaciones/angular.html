@@ -316,6 +316,117 @@ var app = angular.module("myApp", ["ngRoute"]);
             </code></pre>
           </section>
         </section>
+        <section>
+          <section>
+            <h1 class="">Angular 6</h1>
+            <a href="https://angular.io/">https://angular.io/</a>
+          </section>
+          <section>
+            <h2>Angular cli</h2>
+            <h4>Instalación</h4>
+            <pre><code>
+$ npm install -g angular              
+            </code></pre>
+            <h4>Crear nuevo proyecto</h4>
+            <pre><code>
+$ ng new nombre-proyecto              
+            </code></pre>
+          </section>
+          <section>
+            <h2>Ruteo</h2>
+            <a href="https://angular.io/tutorial/toh-pt5">tutorial</a>
+          </section>
+          <section>
+
+          </section>
+        </section>
+        <section>
+          <section>
+            ES6
+          </section>
+          <section>
+            <h2>import / export</h2>
+            <a href="http://es6-features.org/#ValueExportImport">ES6 Features: Import /
+              Export</a>
+            <pre><code>
+import * as math from "lib/math" console.log("2π = " + math.sum(math.pi, math.pi))
+import { sum, pi } from "lib/math" console.log("2π = " + sum(pi, pi))
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+
+            <h1>Typescript</h1>
+            <a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a>
+            <p>ayudar al desarrollador a que le cueste menos trabajo debugger y prevenir errores al desarrollar código</p>
+            <p>Tiene un gran acoplamiento con el IDE Visual Code, dado que te muestra los errores por "Type"</p>
+          </section>
+          <section>
+            <h2>Basic Types 1...</h2>
+            <pre><code>
+let isDone: boolean = false;
+let decimal: number = 6;
+let fullName: string = `Bob Bobbington`;
+let list: number[];
+let notSure: any = 4;
+            </code></pre>
+          </section>
+          <section>
+            <h2>...Basic Types 2</h2>
+            <pre><code>
+function warnUser(): void {
+  alert("This is my warning message");
+}
+            </code></pre>
+          </section>
+          <section>
+            <h2>Interfaces</h2>
+            <a href="https://www.typescriptlang.org/docs/handbook/interfaces.html">https://www.typescriptlang.org/docs/handbook/interfaces.html</a>
+            <pre><code>
+interface personaInterface {
+    name: string,
+    age: number
+}
+
+function insertaPersona (personas: personaInterface) {
+    // manda llamar con ajax el POST para insertar la persona
+}
+
+let nuevaPersona = {
+    name: 'Jacobo',
+    age: 12
+}
+
+insertaPersona(nuevaPersona)
+            </code></pre>
+          </section>
+                  
+                <!-- Variable Declarations
+                  Interfaces
+                  Classes
+                  Functions
+                  Generics
+                  Enums
+                  Type Inference
+                  Type Compatibility
+                  Advanced Types
+                  Symbols
+                  Iterators and Generators
+                  Modules
+                  Namespaces
+                  Namespaces and Modules
+                  Module Resolution
+                  Declaration Merging
+                  JSX
+                  Decorators
+                  Mixins
+                  Triple-Slash Directives
+                  Type Checking JavaScript Files
+              Declaration Files
+              Project Configuration
+                  -->
+        </section>
 			</div>
 		</div>
 

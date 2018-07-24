@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Angular</title>
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section>
+          <section>
+            <h1 class="">Angular 6</h1>
+            <a href="https://angular.io/">https://angular.io/</a>
+          </section>
+          <section>
+            <h2>Angular cli</h2>
+            <h4>Instalación</h4>
+            <pre><code>
+$ npm install -g angular              
+            </code></pre>
+            <h4>Crear nuevo proyecto</h4>
+            <pre><code>
+$ ng new nombre-proyecto              
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Componentes</h2>
+            <p>Los componentes están conformados por 3 archivos:</p>
+            <ul>
+              <li><b>.html</b> Es el template html donde pueden utilizarse las expresiones</li>
+              <li><b>.css</b> los estilos propios del template</li>
+              <li><b>.ts</b> Es donde se lleva a cabo la lógica de negocios (datos, funciones, etc)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Generación de componentes via Angular CLI</h2>
+            <pre><code>
+$ ng generate component mi-componente              
+            </code></pre>
+            <p>Esto generará una carpeta con los 3 archivos: .html, .ts, .css</p>
+            <pre><code>
+mi-proyecto
+-- app
+  -- mi-componente
+    -- mi-componente.component.html
+    -- mi-componente.component.css
+    -- mi-componente.component.js
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Ruteo</h2>
+            <a href="https://angular.io/guide/router">Guía Ruteo y Navegación</a>
+          </section>
+          <section>
+            <h2>Agregar modulo de ruteo</h2>
+            <pre><code>
+$ ng generate module app-routing --flat --module=app              
+            </code></pre>
+            <p>Esto generará un archivo 'app-routing.ts' y modificará el archivo 'app-module.ts'</p>
+            <pre><code>
+mi-proyecto
+-- app/
+  -- app-routing.ts
+  -- app-module.ts            
+            </code></pre>
+          </section>
+          <section>
+            <p>app-routing.ts</p>
+            <pre><code>
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';              
+// Habrá que importar el componente que será servido para cada ruta
+import { MiComponente } from './mi-componente/mi-componente.component'
+import { OtroComponente } from './otro-componente/otro-componente.component'
+
+const routes: Routes = [
+  {
+    path: '', // ruta raíz
+    component: MiComponente
+  },
+  {
+    path: 'otra-ruta', // se accesa /otra-ruta
+    component: OtroComponenete
+  },
+]
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { 
+}
+            </code></pre>
+          </section>
+          <section>
+            <p>app-module.ts</p>
+            <pre><code>
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+// al corr        e el comando de ng generate module, agrega esta línea
+import { AppRoutingModule } from './/app-routing.module';
+
+import { AppComponent } from './app.component';
+import { MiComponente } from './mi-componente/mi-componente.component'
+import { OtroComponente } from './otro-componente/otro-componente.component'
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    MiComponente,
+    OtroComponente,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule // También agrega el module a los imports
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+                
+            </code></pre>
+          </section>
+          <section>
+            <h2>Navegación</h2>
+            <p>Para la navegación hay que agregar dentro de 'app-component.html' una barra de navegación con links y la sección que intercambiará las vistas de los componentes</p>
+          </section>
+          <section>
+            <p>app-component.html</p>
+            <pre><code>
+<nav>
+  <!-- se usa routerLink en vez de href para hacer cambios de rutas dentro de la aplicación -->
+  <a routerLink="/">Mi componente</a>
+  <a routerLink="/otra-ruta">Otro componente</a>
+</nav>
+<!-- <router-outlet> donde se irán intercambiando las vistas de cada componente, según las rutas del navegador -->
+<router-outlet></router-outlet>              
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            ES6
+          </section>
+          <section>
+            <h2>import / export</h2>
+            <a href="http://es6-features.org/#ValueExportImport">ES6 Features: Import /
+              Export</a>
+            <pre><code>
+import * as math from "lib/math" console.log("2π = " + math.sum(math.pi, math.pi))
+import { sum, pi } from "lib/math" console.log("2π = " + sum(pi, pi))
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+
+            <h1>Typescript</h1>
+            <a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a>
+            <p>ayudar al desarrollador a que le cueste menos trabajo debugger y prevenir errores al desarrollar código</p>
+            <p>Tiene un gran acoplamiento con el IDE Visual Code, dado que te muestra los errores por "Type"</p>
+          </section>
+          <section>
+            <h2>Basic Types 1...</h2>
+            <pre><code>
+let isDone: boolean = false;
+let decimal: number = 6;
+let fullName: string = `Bob Bobbington`;
+let list: number[];
+let notSure: any = 4;
+            </code></pre>
+          </section>
+          <section>
+            <h2>...Basic Types 2</h2>
+            <pre><code>
+function warnUser(): void {
+  alert("This is my warning message");
+}
+            </code></pre>
+          </section>
+          <section>
+            <h2>Interfaces</h2>
+            <a href="https://www.typescriptlang.org/docs/handbook/interfaces.html">https://www.typescriptlang.org/docs/handbook/interfaces.html</a>
+            <pre><code>
+interface personaInterface {
+    name: string,
+    age: number
+}
+
+function insertaPersona (personas: personaInterface) {
+    // manda llamar con ajax el POST para insertar la persona
+}
+
+let nuevaPersona = {
+    name: 'Jacobo',
+    age: 12
+}
+
+insertaPersona(nuevaPersona)
+            </code></pre>
+          </section>
+                  
+                <!-- Variable Declarations
+                  Interfaces
+                  Classes
+                  Functions
+                  Generics
+                  Enums
+                  Type Inference
+                  Type Compatibility
+                  Advanced Types
+                  Symbols
+                  Iterators and Generators
+                  Modules
+                  Namespaces
+                  Namespaces and Modules
+                  Module Resolution
+                  Declaration Merging
+                  JSX
+                  Decorators
+                  Mixins
+                  Triple-Slash Directives
+                  Type Checking JavaScript Files
+              Declaration Files
+              Project Configuration
+                  -->
+        </section>
+			</div>
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'zoom',
+				dependencies: [
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

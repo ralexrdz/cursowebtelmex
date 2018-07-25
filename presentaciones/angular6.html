@@ -161,6 +161,42 @@ export class AppModule { }
         </section>
         <section>
           <section>
+            <h2>Bootstrap</h2>
+          </section>
+          <section>
+            <p>Para tener las librerías de bootstrap disponibles hay correr estos comandos</p>
+            <pre><code>
+$ npm install jquery --save
+$ npm install bootstrap --save
+$ npm install popper.js --save
+            </code></pre>  
+          </section>
+          <section>
+            <p>y agregar estas líneas en el archivo "angular.json"</p>
+            <pre><code>
+...
+  architect: {
+    build: {
+      ...
+      options: {
+
+        "styles": [
+          "src/styles.css",
+          "./node_modules/bootstrap/dist/css/bootstrap.css"
+        ],
+        "scripts": [
+          "./node_modules/jquery/dist/jquery.min.js",
+          "./node_modules/popper.js/dist/umd/popper.min.js",
+          "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+        ]
+      }
+    }
+  }              
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
             ES6
           </section>
           <section>

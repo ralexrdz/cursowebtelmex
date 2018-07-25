@@ -81,12 +81,12 @@ $ ng generate module app-routing --flat --module=app
             <pre><code>
 mi-proyecto
 -- app/
-  -- app-routing.ts
+  -- app-routing.module.ts
   -- app-module.ts            
             </code></pre>
           </section>
           <section>
-            <p>app-routing.ts</p>
+            <p>app-routing.module.ts</p>
             <pre><code>
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';              
@@ -151,7 +151,7 @@ export class AppModule { }
             <pre><code>
 <nav>
   <!-- se usa routerLink en vez de href para hacer cambios de rutas dentro de la aplicación -->
-  <a routerLink="/">Mi componente</a>
+  <a routerLink="/">Mi componente</a> <!-- es routerLink con L may -->
   <a routerLink="/otra-ruta">Otro componente</a>
 </nav>
 <!-- <router-outlet> donde se irán intercambiando las vistas de cada componente, según las rutas del navegador -->
